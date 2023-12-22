@@ -117,22 +117,19 @@ function configWebBrowser {
     read -p "[OPEN-IA], Press Enter when done..."
 }
 
-function configIde {
-    install code
-    #config header2
-    #tab = space
+function configOther {
+    #connect discord
+    install discord
+    discord
 }
 
 function configObsidian {
     install obsidian
     install -S noto-fonts-emoji
+
     #clone obsidian
     #conect obsidian
 }
-
-
-
-
 
 function configTerminal {
     # terminal + shell + alias + config xfce
@@ -149,10 +146,12 @@ function configTerminal {
     source ~/.zshrc
 }
 
-function configOther {
-    #connect discord
-    install discord
-    discord
+function configIde {
+    install code
+    #config headers
+    #tab = 4 space
+    #graphical choice
+
 }
 
 function startConfig {
