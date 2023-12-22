@@ -77,43 +77,6 @@ function usage-i3 {
 ##----------------------------------------------- other ------------------------------------------------##
 
 
-function configIde {
-    install code
-    #config header2
-    #tab = space
-}
-
-function configScndBrain {
-    install obsidian
-    install -S noto-fonts-emoji
-    #clone obsidian
-    #conect obsidian
-}
-
-
-
-function configOther {
-    install discord
-    install spotify
-    #connect discord
-    #spotify, bluthooth, pilote son
-}
-
-function configTerminal {
-    # terminal + shell + alias + config xfce
-
-    install xfce4-terminal
-    install zsh
-    #curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh > oh-my-zsh.sh
-    #sed -i "s:env zsh:exit:g" oh-my-zsh.sh
-    #chmod 755 oh-my-zsh.sh
-    #./oh-my-zsh.sh
-    #rm oh-my-zsh.sh
-    
-    echo "alias c='clear'" >> ~/.zshrc
-    source ~/.zshrc
-}
-
 function configGit {
     install git
 
@@ -130,47 +93,81 @@ function configGit {
 }
 
 function configWebBrowser {
-    install opera #configure addon under opera account
+    install opera
 
     if [ -n "$BROWSER" ]; then
     BROWSER="opera.desktop"
     fi
     xdg-settings set default-web-browser "$BROWSER"
 
+    #connect google
+    xdg-open "https://www.google.com/webhp"
+    read -p "[GOOGLE], Press Enter when done..."
     #connect opera
-    xdg-open "https://github.com/settings/keys"
-    read -p "Press Enter when done..."
-
-    #connect google ethan
-    xdg-open "https://github.com/settings/keys"
-    read -p "Press Enter when done..."
-    #connect google C2H6
-    xdg-open "https://github.com/settings/keys"
-    read -p "Press Enter when done..."
-
+    xdg-open "https://auth.opera.com/account/authenticate/email"
+    read -p "[OPERA], Press Enter when done..."
     #connect google github
-    xdg-open "https://github.com/settings/keys"
-    read -p "Press Enter when done..."
+    xdg-open "https://github.com/login"
+    read -p "[GITHUB], Press Enter when done..."
     #connect google leetcode
-    xdg-open "https://github.com/settings/keys"
-    read -p "Press Enter when done..."
+    xdg-open "https://leetcode.com/accounts/signup/"
+    read -p "[LEETCODE], Press Enter when done..."
     #connect google openIA
-    xdg-open "https://github.com/settings/keys"
-    read -p "Press Enter when done..."
+    xdg-open "https://chat.openai.com"
+    read -p "[OPEN-IA], Press Enter when done..."
+}
+
+function configIde {
+    install code
+    #config header2
+    #tab = space
+}
+
+function configObsidian {
+    install obsidian
+    install -S noto-fonts-emoji
+    #clone obsidian
+    #conect obsidian
+}
+
+
+
+
+
+function configTerminal {
+    # terminal + shell + alias + config xfce
+
+    install xfce4-terminal
+    install zsh
+    #curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh > oh-my-zsh.sh
+    #sed -i "s:env zsh:exit:g" oh-my-zsh.sh
+    #chmod 755 oh-my-zsh.sh
+    #./oh-my-zsh.sh
+    #rm oh-my-zsh.sh
+    
+    echo "alias c='clear'" >> ~/.zshrc
+    source ~/.zshrc
+}
+
+function configOther {
+    #connect discord
+    install discord
+    discord
 }
 
 function startConfig {
-    configWebBrowser
-
+    
     #done
+    #configWebBrowser
     #configGit
+    #configOther
 
+    configIde
 
+    #configure obsidian
     #configWindowManager
-    #2config_ide
-
     #3config_terminal
-    #4config_other
+
 }
 
 
@@ -178,6 +175,6 @@ function startConfig {
 
 
 get_os
-sys_upgrade
+#sys_upgrade
 
 startConfig

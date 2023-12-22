@@ -29,21 +29,5 @@ clear
 
 ```
 
-# program to configure
-opera
-google account * 2
-github
-leetcode
-
-git
-
-
-obsidian
-
-
-spotify
-discord
-
-
 # inspiration :
 https://github.com/cyrilcolinet/Epitech-HEADER-2018
