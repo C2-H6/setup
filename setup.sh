@@ -110,9 +110,6 @@ function config_terminal {
     source ~/.zshrc
 }
 
-# function configWindowManager {}
-
-
 function configGit {
     install git
 
@@ -140,15 +137,26 @@ function configWebBrowser {
     xdg-open "https://github.com/settings/keys"
     read -p "Press Enter when done..."
 
-    #connect google * 2
-    #connect opera
-    #connect openIa
+    #connect google ethan
+    xdg-open "https://github.com/settings/keys"
+    read -p "Press Enter when done..."
+    #connect google C2H6
+    xdg-open "https://github.com/settings/keys"
+    read -p "Press Enter when done..."
 
-    #connect leetcode and to github
+    #connect google github
+    xdg-open "https://github.com/settings/keys"
+    read -p "Press Enter when done..."
+    #connect google leetcode
+    xdg-open "https://github.com/settings/keys"
+    read -p "Press Enter when done..."
+    #connect google openIA
+    xdg-open "https://github.com/settings/keys"
+    read -p "Press Enter when done..."
 }
 
 function startConfig {
-    #configWebBrowser
+    configWebBrowser
 
     #done
     #configGit

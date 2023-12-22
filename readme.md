@@ -18,19 +18,15 @@ sudo pacman -S curl
 ## configuration :
 ```bash
 curl -fsSL https://raw.githubusercontent.com/C2-H6/Initialisation/main/init.sh -o init.sh
-chmod +x init.sh
-./init.sh
-rm init.sh
+chmod +x setup.sh
+./setup.sh
+rm setup.sh
 clear
 ```
 
 ## module of C tools
 ```bash
-curl -fsSL https://raw.githubusercontent.com/C2-H6/Initialisation/main/config-C.sh -o config-C.sh
-chmod +x init.sh
-./init.sh
-rm init.sh
-clear
+
 ```
 
 # program to configure(docker)
