@@ -29,8 +29,7 @@ clear
 
 ```
 
-# program to configure(docker)
-
+# program to configure
 opera
 google account * 2
 github

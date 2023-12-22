@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 USERNAME="C2-H6"
 EMAIL="c2h6.dev@gmail.com"
 
@@ -8,10 +9,9 @@ declare -A updates=(
     ["manjaro-i3"]="pacman --noconfirm -Syu"
 )
 
-# ne pas re telecharger si deja la
 declare -A package_managers=(
   ["ubuntu"]="apt install -y"
-  ["manjaro-i3"]="pacman -S"
+  ["manjaro-i3"]="pacman -S --noconfirm"
 )
 
 
@@ -46,6 +46,10 @@ function install {
 wallpaper="https://raw.githubusercontent.com/C2-H6/Initialisation/main/wallpaper.jpg"
 
 function graphical-i3 {
+    #telecharger les app
+    #telecharger le .i3/config de github
+
+
     sudo pacman -S feh
     feh --bg-scale $wallpaper
 
@@ -73,7 +77,7 @@ function usage-i3 {
 ##----------------------------------------------- other ------------------------------------------------##
 
 
-function config_ide {
+function configIde {
     install code
     #config header2
     #tab = space
@@ -88,14 +92,14 @@ function configScndBrain {
 
 
 
-function config_other {
+function configOther {
     install discord
     install spotify
     #connect discord
     #spotify, bluthooth, pilote son
 }
 
-function config_terminal {
+function configTerminal {
     # terminal + shell + alias + config xfce
 
     install xfce4-terminal
@@ -174,6 +178,6 @@ function startConfig {
 
 
 get_os
-#sys_upgrade
+sys_upgrade
 
 startConfig
