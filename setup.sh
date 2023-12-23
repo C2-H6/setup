@@ -43,35 +43,6 @@ function install {
 ##----------------------------------------------- temporary ------------------------------------------------##
 
 
-wallpaper="https://raw.githubusercontent.com/C2-H6/Initialisation/main/wallpaper.jpg"
-
-function graphical-i3 {
-    #telecharger les app
-    #telecharger le .i3/config de github
-
-
-    sudo pacman -S feh
-    feh --bg-scale $wallpaper
-
-
-    #lock i3 lock fond d'ecran pc
-    #ecran de verouillage
-    #fond txt enlever conki
-    #enlever bar en bas sans window m et 
-}
-
-function usage-i3 {
-
-    # N raccourcis discord/obsidian/opera/ide/explorateur/fichier
-    #terminal raccourcis
-    sed -i 's/bindsym $mod+Return exec terminal/bindsym $mod+Return exec xfce4-terminal/g' ~/.i3/config
-
-
-    # exploreateur de fichier
-
-    #i3 config
-    #reload i3 config
-}
 
 
 ##----------------------------------------------- other ------------------------------------------------##
@@ -127,46 +98,46 @@ function configObsidian {
     install obsidian
     install -S noto-fonts-emoji
 
-    #clone obsidian
-    #conect obsidian
+    git clone git@github.com:C2-H6/obsidianBackup.git
+    obsidian
 }
 
-function configTerminal {
-    # terminal + shell + alias + config xfce
-
+function configTerminal { #review after all finished
+    # install terminal
     install xfce4-terminal
-    install zsh
-    #curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh > oh-my-zsh.sh
-    #sed -i "s:env zsh:exit:g" oh-my-zsh.sh
-    #chmod 755 oh-my-zsh.sh
-    #./oh-my-zsh.sh
-    #rm oh-my-zsh.sh
     
+    # config xfce
+
+    # choose shell
+    install zsh
+    curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh > oh-my-zsh.sh
+    sed -i "s:env zsh:exit:g" oh-my-zsh.sh
+    chmod 755 oh-my-zsh.sh
+    ./oh-my-zsh.sh
+    rm oh-my-zsh.sh
+
+    # add alias
     echo "alias c='clear'" >> ~/.zshrc
     source ~/.zshrc
 }
 
 function configIde {
-    install code
-    #config headers
-    #tab = 4 space
-    #graphical choice
-
+    install code #verify next install
+    code
+    #config with "Settings Sync"
 }
 
 function startConfig {
-    
     #done
     #configWebBrowser
     #configGit
     #configOther
+    #configIde
+    #configObsidian
 
-    configIde
+    #configTerminal
 
-    #configure obsidian
     #configWindowManager
-    #3config_terminal
-
 }
 
 
