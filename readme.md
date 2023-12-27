@@ -38,7 +38,6 @@ https://github.com/cyrilcolinet/Epitech-HEADER-2018
 # action i3
 changer fond ecran d'emarage
 changer wallpaper
-(enlever conky)
 nitrogen
 
 0. installer dependances de i3
@@ -55,4 +54,3 @@ nitrogen
 # App :
 police d'ecriture : xft:URWGothic-Book
 terminal : xfce4-terminal
-menu de configuration : dmenu_recency
