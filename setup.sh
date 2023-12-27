@@ -40,11 +40,6 @@ function install {
 }
 
 
-##----------------------------------------------- temporary ------------------------------------------------##
-
-
-
-
 ##----------------------------------------------- other ------------------------------------------------##
 
 
@@ -124,7 +119,13 @@ function configTerminal { #review after all finished
 function configIde {
     install code #verify next install
     code
-    #config with "Settings Sync"
+    read -p "Setting Sync download and updtate, Press Enter when done..."
+}
+
+function configI3 {
+    install i3-wm
+    #copie fichier depuis le github dans le bon endroit
+    #redemare pc
 }
 
 function startConfig {
@@ -135,9 +136,9 @@ function startConfig {
     #configIde
     #configObsidian
 
+    configI3
     #configTerminal
-
-    #configWindowManager
+    
 }
 
 
