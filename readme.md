@@ -43,13 +43,12 @@ nitrogen
 
 0. installer dependances de i3
 1. Telecharger toutes les apps
-2. telecharger le fichier
+2. telecharger le fichier sur git
 
 
 4. changer i3 lock
 5. ecran de verouillage
 7. enlever mod+m
-8. rajouter raccourcis discord/obsidian/opera/ide/explorateur/fichier
 9. reload i3 config
 
 

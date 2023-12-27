@@ -27,15 +27,9 @@ bindsym $mod+d exec --no-startup-id dmenu_recency
 bindsym $mod+Ctrl+b exec pcmanfm #ubuntu case
 
 bindsym $mod+o exec opera
-bindsym $mod+Ctrl+o exec obsidian
-bindsym $mod+Ctrl+c exec code
+bindsym $mod+Shift+o exec obsidian
+bindsym $mod+c exec code
 bindsym $mod+p exec discord
-
-
-###################### finish here ################
-
-
-# focus_follows_mouse no
 
 # change focus
 bindsym $mod+j focus left
@@ -67,9 +61,14 @@ bindsym $mod+b workspace back_and_forth
 bindsym $mod+Shift+b move container to workspace back_and_forth; workspace back_and_forth
 
 # split orientation
-bindsym $mod+h split h;exec notify-send 'tile horizontally'
-bindsym $mod+v split v;exec notify-send 'tile vertically'
+bindsym $mod+h split h;
+bindsym $mod+v split v;
 bindsym $mod+q split toggle
+
+
+###################### finish here ################
+
+
 
 # toggle fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -145,11 +144,9 @@ bindsym $mod+Shift+6 move container to workspace $ws6; workspace $ws6
 bindsym $mod+Shift+7 move container to workspace $ws7; workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
 
-# Open applications on specific workspaces
-# assign [class="Thunderbird"] $ws1
-# assign [class="Pale moon"] $ws2
-# assign [class="Pcmanfm"] $ws3
-# assign [class="Skype"] $ws5
+
+###################### work here ################
+
 
 # Open specific applications in floating mode
 for_window [title="alsamixer"] floating enable border pixel 1

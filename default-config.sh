@@ -34,6 +34,7 @@ bindsym $mod+p exec discord
 
 ###################### finish here ################
 
+
 # change focus
 bindsym $mod+j focus left
 bindsym $mod+k focus down
@@ -63,6 +64,11 @@ bindsym $mod+h split h
 
 # split in vertical orientation
 bindsym $mod+v split v
+
+
+###################### finish here ################
+
+
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen
