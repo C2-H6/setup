@@ -102,6 +102,11 @@ function configTerminal { #review after all finished
     install xfce4-terminal
     
     # config xfce
+    # transparent
+    # pas de bar en haut
+    # police xft:URWGothic-Book
+    # pas de bar coulissante de cote
+
 
     # choose shell
     install zsh
@@ -123,8 +128,14 @@ function configIde {
 }
 
 function configI3 {
+    #install all i3-files
     install i3-wm
+
+    #install logiciel tier
     #copie fichier depuis le github dans le bon endroit
+
+
+    #lance i3
     #redemare pc
 }
 

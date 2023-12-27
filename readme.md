@@ -34,16 +34,14 @@ https://github.com/cyrilcolinet/Epitech-HEADER-2018
 
 
 
-changer fond ecran d'emarage
-changer wallpaper
-
-
-
-(enlever conky, mettre xfce 4 en terminal)
-
 
 # action i3
-0. installer i3-wm, 
+changer fond ecran d'emarage
+changer wallpaper
+(enlever conky)
+nitrogen
+
+0. installer dependances de i3
 1. Telecharger toutes les apps
 2. telecharger le fichier
 
@@ -53,3 +51,9 @@ changer wallpaper
 7. enlever mod+m
 8. rajouter raccourcis discord/obsidian/opera/ide/explorateur/fichier
 9. reload i3 config
+
+
+# App :
+police d'ecriture : xft:URWGothic-Book
+terminal : xfce4-terminal
+menu de configuration : dmenu_recency
