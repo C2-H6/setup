@@ -127,15 +127,21 @@ function configIde {
     read -p "Setting Sync download and updtate, Press Enter when done..."
 }
 
+function configGraphical {
+    #changer fond d'ecran verouillage
+    # pour les 2 os
+}
+
 function configI3 {
     #install all i3-files
-    install i3-wm
+    install i3-wm # pas le meme nom par prog
+    #telecharge font d'ecran 
 
     #install logiciel tier
     #copie fichier depuis le github dans le bon endroit
 
-
-    #lance i3
+    #reload config
+    #supprime fichier
     #redemare pc
 }
 
@@ -147,6 +153,7 @@ function startConfig {
     #configIde
     #configObsidian
 
+    configGraphical
     configI3
     #configTerminal
     
@@ -160,3 +167,5 @@ get_os
 #sys_upgrade
 
 startConfig
+
+#supprime fichier

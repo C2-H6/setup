@@ -21,15 +21,24 @@ bindsym $mod+Return exec xfce4-terminal
 # kill focused window
 bindsym $mod+Shift+q kill
 
+######################   My own shortcut  ######################
+
 # start program launcher
 bindsym $mod+d exec --no-startup-id dmenu_run
-
-bindsym $mod+Ctrl+b exec pcmanfm #ubuntu case
 
 bindsym $mod+o exec opera
 bindsym $mod+Shift+o exec obsidian
 bindsym $mod+c exec code
 bindsym $mod+p exec discord
+
+######################   Manjaro parameter  ######################
+
+bindsym $mod+Ctrl+b exec pcmanfm #createubuntu case
+
+
+##################################################################
+
+
 
 # change focus
 bindsym $mod+j focus left
@@ -64,9 +73,6 @@ bindsym $mod+Shift+b move container to workspace back_and_forth; workspace back_
 bindsym $mod+h split h;
 bindsym $mod+v split v;
 bindsym $mod+q split toggle
-
-
-###################### finish here ################
 
 # toggle fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -139,10 +145,6 @@ bindsym $mod+Shift+6 move container to workspace $ws6; workspace $ws6
 bindsym $mod+Shift+7 move container to workspace $ws7; workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
 
-
-###################### work here ################
-
-
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
 
@@ -155,11 +157,17 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
+
+
+################## I3 LOCK THINGS #########################3
+
+
+
 # Set shut down, restart and locking features
 bindsym $mod+0 mode "$mode_system"
 set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
 mode "$mode_system" {
-    bindsym l exec --no-startup-id i3exit lock, mode "default"
+    bindsym l exec --no-startup-id i3exit lock, mode "default" #usecase of another lock
     bindsym s exec --no-startup-id i3exit suspend, mode "default"
     bindsym u exec --no-startup-id i3exit switch_user, mode "default"
     bindsym e exec --no-startup-id i3exit logout, mode "default"
@@ -172,14 +180,13 @@ mode "$mode_system" {
     bindsym Escape mode "default"
 }
 
+
+####################################################
+
 # Resize window (you can also use the mouse for that)
 bindsym $mod+r mode "resize"
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
         bindsym j resize shrink width 5 px or 5 ppt
         bindsym k resize grow height 5 px or 5 ppt
         bindsym l resize shrink height 5 px or 5 ppt
@@ -196,21 +203,26 @@ mode "resize" {
         bindsym Escape mode "default"
 }
 
+############# HERE HARD PART ##############
+
+#DONE
+exec --no-startup-id feh --bg-scale ~/.i3/wallpaper.jpg
+
 # Lock screen
-bindsym $mod+9 exec --no-startup-id blurlock --no-unlock-indicator
+#bindsym $mod+9 exec --no-startup-id blurlock --no-unlock-indicator
+
 
 # Autostart applications
-exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec --no-startup-id nitrogen --restore; sleep 1; picom -b
-exec --no-startup-id manjaro-hello
-exec --no-startup-id nm-applet
-exec --no-startup-id xfce4-power-manager
-exec --no-startup-id pamac-tray
-exec --no-startup-id clipit
-exec --no-startup-id xautolock -time 10 -locker blurlock --no-unlock-indicator
-exec_always --no-startup-id ff-theme-util
-exec_always --no-startup-id fix_xcursor
-
+#exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+#exec --no-startup-id nitrogen --restore; sleep 1; picom -b
+#exec --no-startup-id manjaro-hello
+#exec --no-startup-id nm-applet
+#exec --no-startup-id xfce4-power-manager
+#exec --no-startup-id pamac-tray
+#exec --no-startup-id clipit
+#exec --no-startup-id xautolock -time 10 -locker blurlock --no-unlock-indicator
+#exec_always --no-startup-id ff-theme-util
+#exec_always --no-startup-id fix_xcursor
 
 
 ## BELLOW ITS DONE ###########
@@ -220,6 +232,7 @@ exec_always --no-startup-id fix_xcursor
 # Start i3bar to display a workspace bar (plus the system information i3status if available)
 bar {
         mode hide
+
 	i3bar_command i3bar
 	status_command i3status
 	position bottom
@@ -240,15 +253,7 @@ colors {
 }
 
 
-#### HERE WORK ####
-
-
-# hide/unhide i3status bar
 bindsym $mod+m bar mode toggle
-
-
-##########################
-
 
 # Set inner/outer gaps
 gaps inner 14
