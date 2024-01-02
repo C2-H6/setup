@@ -136,6 +136,10 @@ function configOs {
     imgPath="~/.i3/wallpaper.jpg"
     curl -fsSL https://github.com/C2-H6/setup/blob/main/wallpaper.jpg >  $imgPath
 
+    #Download alt packages
+    install picom
+    install xfce4-power-manager
+    #police d'ecriture : xft:URWGothic-Book
 
 
     #install logiciel tier

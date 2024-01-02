@@ -161,13 +161,15 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 ################## I3 LOCK THINGS #########################3
 
-
+# Lock screen
+#exec --no-startup-id xautolock -time 10 -locker blurlock --no-unlock-indicator
+#bindsym $mod+9 exec --no-startup-id blurlock --no-unlock-indicator
 
 # Set shut down, restart and locking features
 bindsym $mod+0 mode "$mode_system"
 set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
 mode "$mode_system" {
-    bindsym l exec --no-startup-id i3exit lock, mode "default" #usecase of another lock
+    bindsym l exec --no-startup-id i3exit lock, mode "default" #doesn't work without error msg
     bindsym s exec --no-startup-id i3exit suspend, mode "default"
     bindsym u exec --no-startup-id i3exit switch_user, mode "default"
     bindsym e exec --no-startup-id i3exit logout, mode "default"
@@ -203,30 +205,18 @@ mode "resize" {
         bindsym Escape mode "default"
 }
 
-############# HERE HARD PART ##############
 
-#DONE
-exec --no-startup-id feh --bg-scale ~/.i3/wallpaper.png
+#Setup wallpaper
+exec --no-startup-id feh --bg-scale ~/.i3/wallpaper.png; picom -b
 
-# Lock screen
-#bindsym $mod+9 exec --no-startup-id blurlock --no-unlock-indicator
+#Connect to wifi
+exec --no-startup-id nm-applet
 
+#Change screen brightness
+exec --no-startup-id xfce4-power-manager
 
-# Autostart applications
-#exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-#exec --no-startup-id nitrogen --restore; sleep 1; picom -b
-#exec --no-startup-id manjaro-hello
-#exec --no-startup-id nm-applet
-#exec --no-startup-id xfce4-power-manager
-
-#exec --no-startup-id clipit
-#exec --no-startup-id xautolock -time 10 -locker blurlock --no-unlock-indicator
-#exec_always --no-startup-id ff-theme-util
-#exec_always --no-startup-id fix_xcursor
-
-
-## BELLOW ITS DONE ###########
-
+#autorisation admin
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 
 
 
 # Start i3bar to display a workspace bar (plus the system information i3status if available)
