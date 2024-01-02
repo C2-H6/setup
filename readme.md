@@ -36,17 +36,24 @@ https://github.com/cyrilcolinet/Epitech-HEADER-2018
 
 
 # action i3
-changer wallpaper
-nitrogen ?
 
-0. installer dependances de i3
-1. Telecharger toutes les apps
-2.5. telecharger wallpaper dans bon fichier
-2. telecharger le fichier sur git
+# script perso
+1. ecran de verouillage pour tt os
 
 
-4. changer i3 lock
-5. ecran de verouillage
+1. installer et setup i3 pour chaques os
+2. Telecharger toutes les apps que i3 utilise si besoin
+
+
+## i3 config
+-1. fond d'ecran
+0. regarder lignes par lignes les executables
+1. changer i3 lock
+2. faire 2 fichier de conf i3
+
+
+
+
 
 
 # App :

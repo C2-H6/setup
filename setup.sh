@@ -6,12 +6,12 @@ EMAIL="c2h6.dev@gmail.com"
 
 declare -A updates=(
     ["ubuntu"]="apt -y update && sudo apt -y upgrade"
-    ["manjaro-i3"]="pacman --noconfirm -Syu"
+    ["manjaro"]="pacman --noconfirm -Syu"
 )
 
 declare -A package_managers=(
   ["ubuntu"]="apt install -y"
-  ["manjaro-i3"]="pacman -S --noconfirm"
+  ["manjaro"]="pacman -S --noconfirm"
 )
 
 
@@ -22,7 +22,7 @@ function get_os {
     if command -v apt-get &> /dev/null; then
         os="ubuntu"
     elif command -v pacman &> /dev/null; then
-        os="manjaro-i3"
+        os="manjaro"
     else
         echo "Your OS is not supported."
         return 1
@@ -128,21 +128,30 @@ function configIde {
 }
 
 function configGraphical {
-    #changer fond d'ecran verouillage
-    # pour les 2 os
+
 }
 
-function configI3 {
-    #install all i3-files
-    install i3-wm # pas le meme nom par prog
-    #telecharge font d'ecran 
+function configOs {
+    # Download wallapper
+    imgPath="~/.i3/wallpaper.jpg"
+    curl -fsSL https://github.com/C2-H6/setup/blob/main/wallpaper.jpg >  $imgPath
+
+
 
     #install logiciel tier
-    #copie fichier depuis le github dans le bon endroit
+    if [ "$os" == "manjaro" ]; then
+        echo "Le système d'exploitation est Manjaro."
 
-    #reload config
-    #supprime fichier
-    #redemare pc
+        install i3-wm # pas le meme nom par prog
+
+        curl -fsSL https://github.com/C2-H6/setup/raw/main/config.sh -o ~/.i3/config
+
+    elif [ "$os" == "ubuntu" ]; then
+        echo "Le système d'exploitation est Ubuntu."
+
+        install i3-wm # pas le meme nom par prog
+
+    fi
 }
 
 function startConfig {
@@ -153,8 +162,7 @@ function startConfig {
     #configIde
     #configObsidian
 
-    configGraphical
-    configI3
+    configOS
     #configTerminal
     
 }
@@ -168,4 +176,5 @@ get_os
 
 startConfig
 
-#supprime fichier
+#rm -- "$0"
+#sudo reboot

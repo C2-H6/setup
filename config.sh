@@ -34,7 +34,7 @@ bindsym $mod+p exec discord
 ######################   Manjaro parameter  ######################
 
 bindsym $mod+Ctrl+b exec pcmanfm #createubuntu case
-
+exec --no-startup-id pamac-tray
 
 ##################################################################
 
@@ -206,7 +206,7 @@ mode "resize" {
 ############# HERE HARD PART ##############
 
 #DONE
-exec --no-startup-id feh --bg-scale ~/.i3/wallpaper.jpg
+exec --no-startup-id feh --bg-scale ~/.i3/wallpaper.png
 
 # Lock screen
 #bindsym $mod+9 exec --no-startup-id blurlock --no-unlock-indicator
@@ -218,7 +218,7 @@ exec --no-startup-id feh --bg-scale ~/.i3/wallpaper.jpg
 #exec --no-startup-id manjaro-hello
 #exec --no-startup-id nm-applet
 #exec --no-startup-id xfce4-power-manager
-#exec --no-startup-id pamac-tray
+
 #exec --no-startup-id clipit
 #exec --no-startup-id xautolock -time 10 -locker blurlock --no-unlock-indicator
 #exec_always --no-startup-id ff-theme-util
