@@ -143,6 +143,7 @@ function configWebBrowser {
     install opera
 
     if [ -n "$BROWSER"]; then
+        remove palemoon
         BROWSER=/usr/bin/opera
     fi
     xdg-settings set default-web-browser opera.desktop
