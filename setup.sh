@@ -157,7 +157,7 @@ function configOs {
 
 function startConfig {
     configTerminal
-    configWebBrowser
+    #configWebBrowser
     #configGit
     #configOther
     #configIde
