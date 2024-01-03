@@ -17,7 +17,7 @@ sudo pacman -S curl
 
 ## configuration :
 ``` bash
-curl -fsSL https://raw.githubusercontent.com/C2-H6/Initialisation/main/init.sh -o init.sh
+curl -fsSL https://raw.githubusercontent.com/C2-H6/setup/main/init.sh -o init.sh
 chmod +x setup.sh
 ./setup.sh
 ```
