@@ -62,9 +62,9 @@ function configWebBrowser {
     install opera
 
     if [ -n "$BROWSER" ]; then
-    BROWSER="/usr/bin/opera"
+    BROWSER="opera.desktop"
     fi
-    sudo xdg-settings set default-web-browser opera
+    xdg-settings set default-web-browser opera.desktop
 
 
     #connect google
@@ -154,6 +154,7 @@ function configOs {
 }
 
 function startConfig {
+    configTerminal
     configWebBrowser
     configGit
     configOther
@@ -161,7 +162,7 @@ function startConfig {
     configObsidian
 
     configOS
-    configTerminal
+ 
 }
 
 
