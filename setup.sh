@@ -58,31 +58,7 @@ function configGit {
     read -p "Press Enter when done..."
 }
 
-function configWebBrowser {
-    install opera
 
-    if [ -n "$BROWSER" ]; then
-    BROWSER="opera.desktop"
-    fi
-    xdg-settings set default-web-browser opera.desktop
-
-
-    #connect google
-    xdg-open "https://www.google.com/webhp"
-    read -p "[GOOGLE], Press Enter when done..."
-    #connect opera
-    xdg-open "https://auth.opera.com/account/authenticate/email"
-    read -p "[OPERA], Press Enter when done..."
-    #connect google github
-    xdg-open "https://github.com/login"
-    read -p "[GITHUB], Press Enter when done..."
-    #connect google leetcode
-    xdg-open "https://leetcode.com/accounts/signup/"
-    read -p "[LEETCODE], Press Enter when done..."
-    #connect google openIA
-    xdg-open "https://chat.openai.com"
-    read -p "[OPEN-IA], Press Enter when done..."
-}
 
 function configOther {
     #connect discord
@@ -155,16 +131,41 @@ function configOs {
     fi
 }
 
+function configWebBrowser {
+    install opera
+
+    if [ -n "$BROWSER" ]; then
+    export BROWSER=firefox
+    fi
+    xdg-settings set default-web-browser opera.desktop
+
+
+    #connect google
+    xdg-open "https://www.google.com/webhp"
+    read -p "[GOOGLE], Press Enter when done..."
+    #connect opera
+    xdg-open "https://auth.opera.com/account/authenticate/email"
+    read -p "[OPERA], Press Enter when done..."
+    #connect google github
+    xdg-open "https://github.com/login"
+    read -p "[GITHUB], Press Enter when done..."
+    #connect google leetcode
+    xdg-open "https://leetcode.com/accounts/signup/"
+    read -p "[LEETCODE], Press Enter when done..."
+    #connect google openIA
+    xdg-open "https://chat.openai.com"
+    read -p "[OPEN-IA], Press Enter when done..."
+}
+
 function startConfig {
-    configTerminal
-    #configWebBrowser
+    configWebBrowser
+    #configTerminal
     #configGit
     #configOther
     #configIde
     #configObsidian
 
     #configOS
- 
 }
 
 
