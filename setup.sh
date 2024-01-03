@@ -12,8 +12,13 @@ declare -A updates=(
 )
 
 declare -A package_managers=(
-  ["ubuntu"]="apt install -y"
-  ["manjaro"]="pacman -S --noconfirm"
+    ["ubuntu"]="apt install -y"
+    ["manjaro"]="pacman -S --noconfirm"
+)
+
+declare -A remove=(
+    ["ubuntu"]="apt purge"
+    ["manjaro"]="sudo pacman -Rns" 
 )
 
 
@@ -32,15 +37,16 @@ function get_os {
 }
 
 function sys_upgrade {
-    local update="${updates[$os]}"
-    sudo $update
+    sudo ${updates[$os]}
 }
 
 function install {
-    local package_manager="${package_managers[$os]}"
-    sudo $package_manager "$1"
+    sudo ${package_managers[$os]} "$1"
 }
 
+function remove {
+    sudo ${remove[$os]} "$1"
+}
 
 ##----------------------------------------------- All program ------------------------------------------------##
 
@@ -95,7 +101,7 @@ function configTerminal { #when open zsh rc don't continue the script
     sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
     # Set Zsh as the default shell
-    chsh -s $(which zsh)
+    #chsh -s $(which zsh)
 
     # add alias
     echo "alias c='clear'" >> ~/.zshrc
@@ -136,30 +142,30 @@ function configOs {
 function configWebBrowser {
     install opera
 
-    if [ -n "$BROWSER" ]; then
-    export BROWSER=firefox
+    if [ -n "$BROWSER"]; then
+        BROWSER=/usr/bin/opera
     fi
     xdg-settings set default-web-browser opera.desktop
 
 
     #connect google
     xdg-open "https://www.google.com/webhp"
-    echo -e "${C_YELLOW}[GOOGLE], Press Enter when done...${C_RST}"
+    echo -e "${C_YELLOW}Connection to [GOOGLE], Press Enter when done...${C_RST}"
     read -p ""
     xdg-open "https://auth.opera.com/account/authenticate/email"
-    echo -e "${C_YELLOW}[OPERA], Press Enter when done...${C_RST}"
+    echo -e "${C_YELLOW}Connection to [OPERA], Press Enter when done...${C_RST}"
     read -p ""
     #connect google github
     xdg-open "https://github.com/login"
-    echo -e "${C_YELLOW}[GITHUB], Press Enter when done...${C_RST}"
+    echo -e "${C_YELLOW}Connection to [GITHUB], Press Enter when done...${C_RST}"
     read -p ""
     #connect google leetcode
     xdg-open "https://leetcode.com/accounts/signup/"
-    echo -e "${C_YELLOW}[LEETCODE], Press Enter when done...${C_RST}"
+    echo -e "${C_YELLOW}Connection to [LEETCODE], Press Enter when done...${C_RST}"
     read -p ""
     #connect google openIA
     xdg-open "https://chat.openai.com"
-    echo -e "${C_YELLOW}[OPEN-IA], Press Enter when done...${C_RST}"
+    echo -e "${C_YELLOW}Connection to [OPEN-IA], Press Enter when done...${C_RST}"
     read -p ""
 }
 
