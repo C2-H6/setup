@@ -142,7 +142,7 @@ function configOs {
 function configWebBrowser {
     install opera
 
-    if [ -n "$BROWSER"]; then
+    if [ -n "$BROWSER" ]; then
         remove palemoon
         BROWSER=/usr/bin/opera
     fi
