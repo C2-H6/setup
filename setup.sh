@@ -1,5 +1,7 @@
 #!/bin/bash
 
+C_YELLOW='\033[1;33m'  # ANSI escape code for yellow
+C_RST='\033[0m'        # ANSI escape code to reset color
 
 USERNAME="C2-H6"
 EMAIL="c2h6.dev@gmail.com"
@@ -142,19 +144,19 @@ function configWebBrowser {
 
     #connect google
     xdg-open "https://www.google.com/webhp"
-    read -p "${C_YELLOW}[GOOGLE], Press Enter when done...${C_RST}"
+    read -p "${C_YELLOW}[GOOGLE], Press Enter when done..."
     #connect opera
     xdg-open "https://auth.opera.com/account/authenticate/email"
-    read -p "${C_YELLOW}[OPERA], Press Enter when done...${C_RST}"
+    read -p "[OPERA], Press Enter when done..."
     #connect google github
     xdg-open "https://github.com/login"
-    read -p "${C_YELLOW}[GITHUB], Press Enter when done...${C_RST}"
+    read -p "[GITHUB], Press Enter when done..."
     #connect google leetcode
     xdg-open "https://leetcode.com/accounts/signup/"
-    read -p "${C_YELLOW}[LEETCODE], Press Enter when done...${C_RST}"
+    read -p "[LEETCODE], Press Enter when done..."
     #connect google openIA
     xdg-open "https://chat.openai.com"
-    read -p "${C_YELLOW}[OPEN-IA], Press Enter when done...${C_RST}"
+    read -p "$[OPEN-IA], Press Enter when done..."
 }
 
 function startConfig {
