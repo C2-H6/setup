@@ -98,7 +98,7 @@ function configObsidian {
     obsidian
 }
 
-function configTerminal { #review after all finished
+function configTerminal { #when open zsh rc don't continue the script
     # install terminal
     install xfce4-terminal
     
@@ -110,12 +110,14 @@ function configTerminal { #review after all finished
 
 
     # choose shell
-    install zsh
-    curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh > oh-my-zsh.sh
-    sed -i "s:env zsh:exit:g" oh-my-zsh.sh
-    chmod 755 oh-my-zsh.sh
-    ./oh-my-zsh.sh
-    rm oh-my-zsh.sh
+    # Install Zsh
+    sudo apt install zsh
+
+    # Install Oh My Zsh
+    sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+    # Set Zsh as the default shell
+    chsh -s $(which zsh)
 
     # add alias
     echo "alias c='clear'" >> ~/.zshrc
@@ -156,12 +158,12 @@ function configOs {
 function startConfig {
     configTerminal
     configWebBrowser
-    configGit
-    configOther
-    configIde
-    configObsidian
+    #configGit
+    #configOther
+    #configIde
+    #configObsidian
 
-    configOS
+    #configOS
  
 }
 
