@@ -3,23 +3,19 @@
 
 ## Ubuntu
 ``` bash
-sudo apt -y update && sudo apt -y upgrade
-sudo apt install -y curl
+sudo apt -y update && sudo apt -y upgrade && sudo apt install -y curl
 ```
 
 ## Manjaro
 ```bash
-sudo pacman --noconfirm -Syu
-sudo pacman -S curl
+sudo pacman --noconfirm -Syu && sudo pacman -S curl
 ```
 
 # instalation :
 
 ## configuration :
 ``` bash
-curl -fsSL https://raw.githubusercontent.com/C2-H6/setup/main/setup.sh -o setup.sh
-chmod +x setup.sh
-./setup.sh
+curl -fsSL https://raw.githubusercontent.com/C2-H6/setup/main/setup.sh -o setup.sh && chmod +x setup.sh && ./setup.sh
 ```
 
 ## module of C tools
