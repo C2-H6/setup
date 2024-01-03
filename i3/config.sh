@@ -155,10 +155,10 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
-################## I3 lock, option and shortcut #########################3
+################## I3 lock, option and shortcut #########################
 
 # Define the lock command
-set $lock_command "i3lock --no-unlock-indicator --image ~/.i3/wallpaper.png "
+set $lock_command "i3lock --no-unlock-indicator --image ~/.i3/hello.png"
 
 # Define the logind command based on the init system
 exec --no-startup-id logind=$(if [ "$(cat /proc/1/comm)" = "systemd" ]; then echo "systemctl"; else echo "loginctl"; fi)
@@ -183,7 +183,7 @@ mode "$mode_system" {
 exec --no-startup-id xautolock -time 10 -locker $lock_command
 bindsym $mod+9 exec --no-startup-id $lock_command
 
-####################################################
+##################################################
 
 # Resize window (you can also use the mouse for that)
 bindsym $mod+r mode "resize"

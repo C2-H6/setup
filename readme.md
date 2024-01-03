@@ -39,16 +39,11 @@ https://github.com/cyrilcolinet/Epitech-HEADER-2018
 
 # script perso
 
+0. refaire clef USB
+
 1. installer et setup i3 pour chaques os
-2. Telecharger toutes les apps que i3 utilise si besoin
-
-
-## i3 config
-1. changer i3 lock 
 
 
 4. home screen for ubuntu, manjaro
 5. faire 2 fichier de conf i3
 
-6. refaire clef USB
-7. tester le programme sur differents OS

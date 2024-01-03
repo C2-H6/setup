@@ -128,10 +128,10 @@ function configIde {
 }
 
 function configOs {
-    # Download wallapper
-    imgPath="~/.i3/wallpaper.png"
-    curl -fsSL https://github.com/C2-H6/setup/blob/main/wallpaper/1.png >  $imgPath
-    curl -fsSL https://github.com/C2-H6/setup/blob/main/wallpaper/6.png >  ~/.i3/hello.png
+    #Download i3, amd wallpaper
+    curl -fsSL https://github.com/C2-H6/setup/raw/main/config.sh -o ~/.i3/config
+    curl -o ~/.i3/wallpaper.png -fsSL https://github.com/C2-H6/setup/raw/main/wallpaper/1.png
+    curl -o ~/.i3/hello.png -fsSL https://github.com/C2-H6/setup/raw/main/wallpaper/4.png
 
     #Download alt packages
     install picom
@@ -145,15 +145,12 @@ function configOs {
 
         install i3-wm # pas le meme nom par prog
 
-        curl -fsSL https://github.com/C2-H6/setup/raw/main/config.sh -o ~/.i3/config
-
     elif [ "$os" == "ubuntu" ]; then
         echo "Le système d'exploitation est Ubuntu."
     fi
 }
 
 function startConfig {
-    #done
     #configWebBrowser
     #configGit
     #configOther
@@ -162,7 +159,6 @@ function startConfig {
 
     configOS
     #configTerminal
-    
 }
 
 
