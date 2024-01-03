@@ -142,7 +142,7 @@ function configWebBrowser {
 
     #connect google
     xdg-open "https://www.google.com/webhp"
-    read -p "[GOOGLE], Press Enter when done..."
+    read -p "${C_YELLOW}[GOOGLE], Press Enter when done..."
     #connect opera
     xdg-open "https://auth.opera.com/account/authenticate/email"
     read -p "[OPERA], Press Enter when done..."
@@ -154,7 +154,7 @@ function configWebBrowser {
     read -p "[LEETCODE], Press Enter when done..."
     #connect google openIA
     xdg-open "https://chat.openai.com"
-    read -p "[OPEN-IA], Press Enter when done..."
+    read -p "[OPEN-IA], Press Enter when done...${C_RST}"
 }
 
 function startConfig {
