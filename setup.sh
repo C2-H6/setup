@@ -142,19 +142,19 @@ function configWebBrowser {
 
     #connect google
     xdg-open "https://www.google.com/webhp"
-    read -p "${C_YELLOW}[GOOGLE], Press Enter when done..."
+    read -p "${C_YELLOW}[GOOGLE], Press Enter when done...${C_RST}"
     #connect opera
     xdg-open "https://auth.opera.com/account/authenticate/email"
-    read -p "[OPERA], Press Enter when done..."
+    read -p "${C_YELLOW}[OPERA], Press Enter when done...${C_RST}"
     #connect google github
     xdg-open "https://github.com/login"
-    read -p "[GITHUB], Press Enter when done..."
+    read -p "${C_YELLOW}[GITHUB], Press Enter when done...${C_RST}"
     #connect google leetcode
     xdg-open "https://leetcode.com/accounts/signup/"
-    read -p "[LEETCODE], Press Enter when done..."
+    read -p "${C_YELLOW}[LEETCODE], Press Enter when done...${C_RST}"
     #connect google openIA
     xdg-open "https://chat.openai.com"
-    read -p "[OPEN-IA], Press Enter when done...${C_RST}"
+    read -p "${C_YELLOW}[OPEN-IA], Press Enter when done...${C_RST}"
 }
 
 function startConfig {
