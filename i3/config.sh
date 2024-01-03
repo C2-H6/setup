@@ -1,5 +1,4 @@
 # i3 config file (v4)
-# Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
 # Set mod key (Mod1=<Alt>, Mod4=<Super>)
 set $mod Mod4
@@ -36,7 +35,7 @@ bindsym $mod+p exec discord
 bindsym $mod+Ctrl+b exec pcmanfm #createubuntu case
 exec --no-startup-id pamac-tray
 
-
+############################################
 
 # change focus
 bindsym $mod+j focus left

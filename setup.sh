@@ -15,7 +15,7 @@ declare -A package_managers=(
 )
 
 
-##----------------------------------------------- salopette ------------------------------------------------##
+##----------------------------------------------- OS related information ------------------------------------------------##
 
 
 function get_os {
@@ -40,7 +40,7 @@ function install {
 }
 
 
-##----------------------------------------------- other ------------------------------------------------##
+##----------------------------------------------- All program ------------------------------------------------##
 
 
 function configGit {
@@ -129,7 +129,7 @@ function configIde {
 
 function configOs {
     #Download i3, amd wallpaper
-    curl -fsSL https://github.com/C2-H6/setup/raw/main/config.sh -o ~/.i3/config
+    curl -fsSL https://github.com/C2-H6/setup/raw/main/i3/config.sh -o ~/.i3/config
     curl -o ~/.i3/wallpaper.png -fsSL https://github.com/C2-H6/setup/raw/main/wallpaper/1.png
     curl -o ~/.i3/hello.png -fsSL https://github.com/C2-H6/setup/raw/main/wallpaper/4.png
 
@@ -139,7 +139,8 @@ function configOs {
     #police d'ecriture : xft:URWGothic-Book
 
 
-    #install logiciel tier
+
+    #install i3
     if [ "$os" == "manjaro" ]; then
         echo "Le système d'exploitation est Manjaro."
 
@@ -147,18 +148,19 @@ function configOs {
 
     elif [ "$os" == "ubuntu" ]; then
         echo "Le système d'exploitation est Ubuntu."
+        install i3
     fi
 }
 
 function startConfig {
-    #configWebBrowser
-    #configGit
-    #configOther
-    #configIde
-    #configObsidian
+    configWebBrowser
+    configGit
+    configOther
+    configIde
+    configObsidian
 
     configOS
-    #configTerminal
+    configTerminal
 }
 
 
@@ -166,9 +168,9 @@ function startConfig {
 
 
 get_os
-#sys_upgrade
+sys_upgrade
 
 startConfig
 
-#rm -- "$0"
-#sudo reboot
+rm -- "$0"
+sudo reboot

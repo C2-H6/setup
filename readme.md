@@ -16,16 +16,14 @@ sudo pacman -S curl
 # instalation :
 
 ## configuration :
-```bash
+``` bash
 curl -fsSL https://raw.githubusercontent.com/C2-H6/Initialisation/main/init.sh -o init.sh
 chmod +x setup.sh
 ./setup.sh
-rm setup.sh
-clear
 ```
 
 ## module of C tools
-```bash
+``` bash
 
 ```
 
@@ -37,13 +35,10 @@ https://github.com/cyrilcolinet/Epitech-HEADER-2018
 
 # action i3
 
-# script perso
-
-0. refaire clef USB
-
-1. installer et setup i3 pour chaques os
 
 
 4. home screen for ubuntu, manjaro
+1. installer et setup i3 pour chaques os
+
 5. faire 2 fichier de conf i3
 
