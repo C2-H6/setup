@@ -176,5 +176,5 @@ sys_upgrade
 
 startConfig
 
-rm -- "$0"
-sudo reboot
+#rm -- "$0"
+#sudo reboot
