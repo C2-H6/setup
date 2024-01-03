@@ -62,7 +62,7 @@ function configWebBrowser {
     install opera
 
     if [ -n "$BROWSER" ]; then
-    BROWSER="opera.desktop"
+    BROWSER="opera"
     fi
     xdg-settings set default-web-browser "$BROWSER"
 
