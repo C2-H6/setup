@@ -35,7 +35,7 @@ https://github.com/cyrilcolinet/Epitech-HEADER-2018
 
 # action i3
 
-0. default web browser
+0. default web browser opera
 
 4. home screen for ubuntu, manjaro
 1. installer et setup i3 pour chaques os
