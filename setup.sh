@@ -122,19 +122,16 @@ function configTerminal { #review after all finished
 }
 
 function configIde {
-    install code #verify next install
+    install code
     code
     read -p "Setting Sync download and updtate, Press Enter when done..."
 }
 
-function configGraphical {
-
-}
-
 function configOs {
     # Download wallapper
-    imgPath="~/.i3/wallpaper.jpg"
-    curl -fsSL https://github.com/C2-H6/setup/blob/main/wallpaper.jpg >  $imgPath
+    imgPath="~/.i3/wallpaper.png"
+    curl -fsSL https://github.com/C2-H6/setup/blob/main/wallpaper/1.png >  $imgPath
+    curl -fsSL https://github.com/C2-H6/setup/blob/main/wallpaper/6.png >  ~/.i3/hello.png
 
     #Download alt packages
     install picom
@@ -152,9 +149,6 @@ function configOs {
 
     elif [ "$os" == "ubuntu" ]; then
         echo "Le système d'exploitation est Ubuntu."
-
-        install i3-wm # pas le meme nom par prog
-
     fi
 }
 

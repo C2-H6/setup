@@ -47,7 +47,8 @@ https://github.com/cyrilcolinet/Epitech-HEADER-2018
 1. changer i3 lock 
 
 
-2. voir i3exit car lock etrangement et revoir tout les comportements
-
 4. home screen for ubuntu, manjaro
 5. faire 2 fichier de conf i3
+
+6. refaire clef USB
+7. tester le programme sur differents OS

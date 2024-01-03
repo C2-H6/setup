@@ -36,8 +36,6 @@ bindsym $mod+p exec discord
 bindsym $mod+Ctrl+b exec pcmanfm #createubuntu case
 exec --no-startup-id pamac-tray
 
-##################################################################
-
 
 
 # change focus
@@ -157,31 +155,33 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
+################## I3 lock, option and shortcut #########################3
 
+# Define the lock command
+set $lock_command "i3lock --no-unlock-indicator --image ~/.i3/wallpaper.png "
 
-################## I3 LOCK THINGS #########################3
+# Define the logind command based on the init system
+exec --no-startup-id logind=$(if [ "$(cat /proc/1/comm)" = "systemd" ]; then echo "systemctl"; else echo "loginctl"; fi)
 
-# Lock screen
-#exec --no-startup-id xautolock -time 10 -locker blurlock --no-unlock-indicator
-#bindsym $mod+9 exec --no-startup-id blurlock --no-unlock-indicator
-
-# Set shut down, restart and locking features
+# Set shut down, restart, and locking features
 bindsym $mod+0 mode "$mode_system"
-set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
+set $mode_system (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
 mode "$mode_system" {
-    bindsym l exec --no-startup-id i3exit lock, mode "default" #doesn't work without error msg
-    bindsym s exec --no-startup-id i3exit suspend, mode "default"
-    bindsym u exec --no-startup-id i3exit switch_user, mode "default"
-    bindsym e exec --no-startup-id i3exit logout, mode "default"
-    bindsym h exec --no-startup-id i3exit hibernate, mode "default"
-    bindsym r exec --no-startup-id i3exit reboot, mode "default"
-    bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"
+    bindsym s exec --no-startup-id $lock_command && $logind suspend, mode "default"
+    bindsym u exec --no-startup-id dm-tool switch-to-greeter, mode "default"
+    bindsym e exec --no-startup-id $lock_command && $logind logout, mode "default"
+    bindsym h exec --no-startup-id $lock_command && $logind hibernate, mode "default"
+    bindsym r exec --no-startup-id $logind reboot, mode "default"
+    bindsym Shift+s exec --no-startup-id $logind poweroff, mode "default"
 
-    # exit system mode: "Enter" or "Escape"
+    # Exit system mode: "Enter" or "Escape"
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
 
+# Lock screen
+exec --no-startup-id xautolock -time 10 -locker $lock_command
+bindsym $mod+9 exec --no-startup-id $lock_command
 
 ####################################################
 
@@ -226,10 +226,6 @@ bar {
 	i3bar_command i3bar
 	status_command i3status
 	position bottom
-
-## please set your primary output first. Example: 'xrandr --output eDP1 --primary'
-#	tray_output primary
-#	tray_output eDP1
 
 	bindsym button4 nop
 	bindsym button5 nop
