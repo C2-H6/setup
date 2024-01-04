@@ -150,8 +150,9 @@ function configWebBrowser {
         sed -i 's|^text/html=.*$|text/html=opera.desktop|' ~/.config/mimeapps.list
         #remove palemoon
         source ~/.profile
+    else
+        xdg-settings set default-web-browser opera.desktop
     fi
-    xdg-settings set default-web-browser opera.desktop
 
 
     #connect google

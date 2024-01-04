@@ -39,3 +39,4 @@ BUG
 
 5. faire 2 fichier de conf i3
 
+FINAL. faire disparaitre les differents lien de github qui apparaissent su internet
