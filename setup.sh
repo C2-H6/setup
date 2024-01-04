@@ -144,12 +144,13 @@ function configWebBrowser {
 
     if [ -n "$BROWSER" ]; then
         sed -i 's|^export BROWSER=.*$|export BROWSER=/usr/bin/opera|' ~/.profile
+        remove palemoon
 
-        sed -i '/^x-scheme-handler\/http=/ s|=.*$|=opera.desktop|' ~/.config/mimeapps.list
-        sed -i '/^x-scheme-handler\/https=/ s|=.*$|=opera.desktop|' ~/.config/mimeapps.list
-        sed -i '/^text\/html=/ s|=.*$|=opera.desktop|' ~/.config/mimeapps.list
+        #sed -i '/^x-scheme-handler\/http=/ s|=.*$|=opera.desktop|' ~/.config/mimeapps.list
+        #sed -i '/^x-scheme-handler\/https=/ s|=.*$|=opera.desktop|' ~/.config/mimeapps.list
+        #sed -i '/^text\/html=/ s|=.*$|=opera.desktop|' ~/.config/mimeapps.list
 
-        source ~/.profile
+        #source ~/.profile
     else
         xdg-settings set default-web-browser opera.desktop
     fi
