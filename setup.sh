@@ -143,8 +143,9 @@ function configWebBrowser {
     install opera
 
     if [ -n "$BROWSER" ]; then
-        remove palemoon
-        BROWSER=opera.desktop
+        sed -i 's|^export BROWSER=.*$|export BROWSER=/usr/bin/opera|' ~/.profile
+        #remove palemoon
+        source ~/.profile
     fi
     xdg-settings set default-web-browser opera.desktop
 
