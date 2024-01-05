@@ -138,14 +138,9 @@ function configWebBrowser {
         sudo ${updates[$os]}
         install opera-stable
         xdg-settings set default-web-browser opera.desktop
-    elif [ -n "$BROWSER" ]; then
+    elif [ "$os" = "manjaro" ]; then
         install opera
-        sed -i 's|^export BROWSER=.*$|export BROWSER=/usr/bin/opera.desktop|' ~/.profile
-        #remove palemoon
-        #xdg-mime query default x-scheme-handler/https
-        #xdg-mime default google-chrome.desktop x-scheme-handler/https
-        #xdg-mime default google-chrome.desktop x-scheme-handler/http
-        
+        remove palemoon        
         xdg-settings set default-web-browser opera.desktop
     fi
 
