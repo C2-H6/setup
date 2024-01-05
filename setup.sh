@@ -103,9 +103,9 @@ function configOs {
     install xfce4-power-manager
     #police d'ecriture : xft:URWGothic-Book
 
-
-    install i3
-
+    if [ "$os" = "ubuntu" ]; 
+        install i3
+    fi
 }
 
 function configTerminal { #when open zsh rc don't continue the script
