@@ -32,7 +32,7 @@ bindsym $mod+p exec discord
 
 ######################   Manjaro parameter  ######################
 
-bindsym $mod+Ctrl+b exec pcmanfm #createubuntu case
+bindsym $mod+Ctrl+b exec pcmanfm
 exec --no-startup-id pamac-tray
 
 ############################################

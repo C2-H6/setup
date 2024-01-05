@@ -32,8 +32,8 @@ bindsym $mod+p exec discord
 
 ######################   Manjaro parameter  ######################
 
-bindsym $mod+Ctrl+b exec pcmanfm #createubuntu case
-exec --no-startup-id pamac-tray
+bindsym $mod+Ctrl+b exec pnautilus
+exec --no-startup-id update-manager
 
 ############################################
 

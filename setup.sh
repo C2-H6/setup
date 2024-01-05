@@ -101,8 +101,8 @@ function configOs {
     elif [ "$os" = "manjaro" ]; then
         curl -fsSL https://github.com/C2-H6/setup/raw/main/i3/config-manjaro.sh -o ~/.i3/config
     fi
-    #Download i3, and wallpaper
-    
+
+    #Download wallpaper 
     curl -o ~/.i3/wallpaper.png -fsSL https://github.com/C2-H6/setup/raw/main/wallpaper/1.png
     curl -o ~/.i3/hello.png -fsSL https://github.com/C2-H6/setup/raw/main/wallpaper/4.png
 
