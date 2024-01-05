@@ -95,8 +95,6 @@ function configIde {
 }
 
 function configOs {
-    read -p "tmp"
-
     #Download i3, and wallpaper
     curl -fsSL https://github.com/C2-H6/setup/raw/main/i3/config.sh -o ~/.i3/config
     curl -o ~/.i3/wallpaper.png -fsSL https://github.com/C2-H6/setup/raw/main/wallpaper/1.png
@@ -193,7 +191,7 @@ function startConfig {
     #configObsidian
 
     configTerminal
-    configOs
+    #configOs
 }
 
 
@@ -205,7 +203,7 @@ sys_upgrade
 
 startConfig
 
-    echo -e "${C_YELLOW}End of the setup, Press Enter when done...${C_RST}"
-    read -p ""
+echo -e "${C_YELLOW}End of the setup, Press Enter when done...${C_RST}"
+read -p ""
     #rm -- "$0"
     #sudo reboot
