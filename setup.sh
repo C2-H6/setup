@@ -16,10 +16,10 @@ declare -A package_managers=(
     ["manjaro"]="pacman -S --noconfirm"
 )
 
-declare -A remove=(
-    ["ubuntu"]="apt purge"
-    ["manjaro"]="sudo pacman -Rns" 
-)
+#declare -A remove=(
+#    ["ubuntu"]="apt purge"
+#    ["manjaro"]="sudo pacman -Rns" 
+#)
 
 
 ##----------------------------------------------- OS related information ------------------------------------------------##
@@ -44,9 +44,9 @@ function install {
     sudo ${package_managers[$os]} "$1"
 }
 
-function remove {
-    sudo ${remove[$os]} "$1"
-}
+#function remove {
+#    sudo ${remove[$os]} "$1"
+#}
 
 ##----------------------------------------------- All program ------------------------------------------------##
 
@@ -143,7 +143,7 @@ function configWebBrowser {
     install opera
 
     if [ -n "$BROWSER" ]; then
-        sed -i 's|^export BROWSER=.*$|export BROWSER=/usr/bin/opera|' ~/.profile
+        sed -i 's|^export BROWSER=.*$|export BROWSER=/usr/bin/opera.desktop|' ~/.profile
         remove palemoon
 
         #sed -i '/^x-scheme-handler\/http=/ s|=.*$|=opera.desktop|' ~/.config/mimeapps.list
@@ -151,6 +151,11 @@ function configWebBrowser {
         #sed -i '/^text\/html=/ s|=.*$|=opera.desktop|' ~/.config/mimeapps.list
 
         #source ~/.profile
+
+
+        #xdg-mime query default x-scheme-handler/https
+        #xdg-mime default google-chrome.desktop x-scheme-handler/https
+    #xdg-mime default google-chrome.desktop x-scheme-handler/http
     else
         xdg-settings set default-web-browser opera.desktop
     fi
