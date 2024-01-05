@@ -84,31 +84,7 @@ function configObsidian {
     obsidian
 }
 
-function configTerminal { #when open zsh rc don't continue the script
-    # install terminal
-    install xfce4-terminal
-    
-    # config xfce
-    # transparent
-    # pas de bar en haut
-    # police xft:URWGothic-Book
-    # pas de bar coulissante de cote
 
-
-    # choose shell
-    # Install Zsh
-    sudo apt install zsh
-
-    # Install Oh My Zsh
-    sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-
-    # Set Zsh as the default shell
-    #chsh -s $(which zsh)
-
-    # add alias
-    echo "alias c='clear'" >> ~/.zshrc
-    source ~/.zshrc
-}
 
 function configIde {
     install code
@@ -141,28 +117,49 @@ function configOs {
     fi
 }
 
+function configTerminal { #when open zsh rc don't continue the script
+    # install terminal
+    install xfce4-terminal
+    
+    # config xfce
+    # transparent
+    # pas de bar en haut
+    # police xft:URWGothic-Book
+    # pas de bar coulissante de cote
+
+
+    # Install Oh My Zsh
+    install zsh
+    sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+    # Set Zsh as the default shell
+    #chsh -s $(which zsh)
+
+    # add alias
+    echo "alias c='clear'" >> ~/.zshrc
+    source ~/.zshrc
+}
+
 function configWebBrowser {
     if [ "$os" = "ubuntu" ]; then
         sudo sh -c 'echo "deb http://deb.opera.com/opera/ stable non-free" >> /etc/apt/sources.list.d/opera.list'
         sudo sh -c 'wget -O - http://deb.opera.com/archive.key | apt-key add -'
         sudo ${updates[$os]}
         install opera-stable
-    else
-        install opera
-    fi
-
-    #mkdir -p $HOME/.config/opera/Crash\ Reports/attachments/13870b39-6922-4783-8a05-227bfd3e19e5
-
-    #make opera default browser
-    if [ -n "$BROWSER" ]; then
+        xdg-settings set default-web-browser opera.desktop
+    elif [ -n "$BROWSER" ]; then
         sed -i 's|^export BROWSER=.*$|export BROWSER=/usr/bin/opera.desktop|' ~/.profile
         #remove palemoon
 
         #xdg-mime query default x-scheme-handler/https
         #xdg-mime default google-chrome.desktop x-scheme-handler/https
-    #xdg-mime default google-chrome.desktop x-scheme-handler/http
+        #xdg-mime default google-chrome.desktop x-scheme-handler/http
+        install opera
+    fi
+
+
+    # opera default browser
     else
-        xdg-settings set default-web-browser opera.desktop
     fi
 
     #open opera
@@ -191,8 +188,8 @@ function configWebBrowser {
 }
 
 function startConfig {
-    configWebBrowser
-    #configTerminal
+    #configWebBrowser
+    configTerminal
     #configGit
     #configOther
     #configIde
