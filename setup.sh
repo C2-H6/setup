@@ -130,7 +130,7 @@ function configTerminal {
     install zsh
     if [ ! -d "$HOME/.oh-my-zsh" ]; then
         source <(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)
-    else
+    fi
 
 
     # Add alias
