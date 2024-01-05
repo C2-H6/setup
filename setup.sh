@@ -141,6 +141,7 @@ function configOs {
 
 function configWebBrowser {
     install opera
+    mkdir -p $HOME/.config/opera/Crash\ Reports/attachments/13870b39-6922-4783-8a05-227bfd3e19e5
 
     if [ -n "$BROWSER" ]; then
         sed -i 's|^export BROWSER=.*$|export BROWSER=/usr/bin/opera.desktop|' ~/.profile
