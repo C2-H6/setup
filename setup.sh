@@ -65,7 +65,8 @@ function configGit {
     cat ~/.ssh/id_rsa.pub
 
     xdg-open "https://github.com/settings/keys"
-    read -p "Press Enter when done..."
+    echo -e "${C_YELLOW}copy and past the token in [github], Press Enter when done...${C_RST}"
+    read -p ""
 }
 
 
@@ -73,7 +74,8 @@ function configGit {
 function configOther {
     #connect discord
     install discord
-    discord
+    echo -e "${C_YELLOW}open : [DISCORD] and configure it, Press Enter when done...${C_RST}"
+    read -p ""
 }
 
 function configObsidian {
@@ -81,7 +83,8 @@ function configObsidian {
     install -S noto-fonts-emoji
 
     git clone git@github.com:C2-H6/obsidianBackup.git
-    obsidian
+    echo -e "${C_YELLOW}open : [OBSIDIAN]  and configure it, Press Enter when done...${C_RST}"
+    read -p ""
 }
 
 
@@ -89,7 +92,8 @@ function configObsidian {
 function configIde {
     install code
     code
-    read -p "Setting Sync download and updtate, Press Enter when done..."
+    echo -e "${C_YELLOW}Setting Sync download and updtate, Press Enter when done...${C_RST}"
+    read -p ""
 }
 
 function configOs {
@@ -119,12 +123,10 @@ function configTerminal { #when open zsh rc don't continue the script
     # pas de bar coulissante de cote
 
 
-    # Install Oh My Zsh
+    # Install zsh, Oh My Zsh
     install zsh
     sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
-    # Set Zsh as the default shell
-    #chsh -s $(which zsh)
 
     # add alias
     echo "alias c='clear'" >> ~/.zshrc
@@ -179,7 +181,7 @@ function startConfig {
     configObsidian
 
     #configTerminal
-    #configOS
+    configOS
 }
 
 
