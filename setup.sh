@@ -180,7 +180,7 @@ function startConfig {
     configIde
     configObsidian
 
-    #configTerminal
+    configTerminal
     configOS
 }
 
