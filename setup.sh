@@ -128,8 +128,10 @@ function configTerminal {
 
     # Install zsh, Oh My Zsh
     install zsh
-    sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-    exit
+    if [ ! -d "$HOME/.oh-my-zsh" ]; then
+        source <(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)
+    else
+
 
     # Add alias
     echo "alias c='clear'" >> ~/.zshrc

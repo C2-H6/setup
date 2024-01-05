@@ -22,8 +22,7 @@ curl -fsSL https://raw.githubusercontent.com/C2-H6/setup/main/setup.sh -o setup.
 ```
 
 # inspiration :
-https://github.com/cyrilcolinet/Epitech-HEADER-2018
-
+https://github.com/kayofeld/script-installation-ordinateur-epitech
 
 
 
