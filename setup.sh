@@ -117,25 +117,25 @@ function configTerminal {
     
     # Config xfce
     echo -e "${C_YELLOW}-----  Apparence :  -----${C_RST}"
-    echo -e "${C_YELLOW}[o] : Use system font${C_RST}"
     echo -e "${C_YELLOW}[--] : Transparent background${C_RST}"
     echo -e "${C_YELLOW}[o] : display menu bar${C_RST}"
     echo -e "${C_YELLOW}[o] : display border${C_RST}"
     echo -e "${C_YELLOW}Config xfce4, Press Enter when done...${C_RST}"
     read -p ""
 
-#curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh > oh-my-zsh.sh
-#sed -i "s:env zsh:exit:g" oh-my-zsh.sh
-#chmod 755 oh-my-zsh.sh
-#./oh-my-zsh.sh
-#rm oh-my-zsh.sh
-#no error check here: remote install.sh has a chsh error
-#chsh $USER -s /usr/bin/zsh
+
 
     # Install zsh, Oh My Zsh
     if [ ! -d "$HOME/.oh-my-zsh" ]; then
-        sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+        curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh > oh-my-zsh.sh
+      sed -i "s:env zsh:exit:g" oh-my-zsh.sh
+        chmod 755 oh-my-zsh.sh
+        ./oh-my-zsh.sh
+        rm oh-my-zsh.sh
+        chsh $USER -s /usr/bin/zsh
+        
 
+        #sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
         #source <(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)
         #exit
     fi
