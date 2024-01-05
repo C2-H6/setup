@@ -29,13 +29,11 @@ https://github.com/cyrilcolinet/Epitech-HEADER-2018
 
 # action i3
 
-BUG
-- change default web browser
-- make zsh default shell
-- computer relaunch
 
-4. home screen for ubuntu, manjaro
+
 1. installer et setup i3 pour chaques os
+2. opera sauvegarde pas tts
+
 
 5. faire 2 fichier de conf i3
 

@@ -63,6 +63,7 @@ function configGit {
     ssh-keygen -t rsa -b 4096 -C "$EMAIL"
     eval "$(ssh-agent -s)"
     ssh-add ~/.ssh/id_rsa
+    
     cat ~/.ssh/id_rsa.pub
 
     xdg-open "https://github.com/settings/keys"
@@ -94,6 +95,8 @@ function configIde {
 }
 
 function configOs {
+    read -p "tmp"
+
     #Download i3, and wallpaper
     curl -fsSL https://github.com/C2-H6/setup/raw/main/i3/config.sh -o ~/.i3/config
     curl -o ~/.i3/wallpaper.png -fsSL https://github.com/C2-H6/setup/raw/main/wallpaper/1.png
@@ -126,6 +129,7 @@ function configTerminal {
     # Install zsh, Oh My Zsh
     install zsh
     sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+    exit
 
     # Add alias
     echo "alias c='clear'" >> ~/.zshrc
@@ -173,11 +177,11 @@ function configWebBrowser {
 }
 
 function startConfig {
-    configWebBrowser
-    configGit
-    configOther
-    configIde
-    configObsidian
+    #configWebBrowser
+    #configGit
+    #configOther
+    #configIde
+    #configObsidian
 
     configTerminal
     configOS
@@ -192,5 +196,5 @@ sys_upgrade
 
 startConfig
 
-rm -- "$0"
-sudo reboot
+#rm -- "$0"
+#sudo reboot
