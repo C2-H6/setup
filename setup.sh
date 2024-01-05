@@ -103,7 +103,7 @@ function configOs {
     install xfce4-power-manager
     #police d'ecriture : xft:URWGothic-Book
 
-    if [ "$os" = "ubuntu" ]; 
+    if [ "$os" = "ubuntu" ]; then
         install i3
     fi
 }
@@ -158,6 +158,7 @@ function configWebBrowser {
     xdg-open "https://www.google.com/webhp"
     echo -e "${C_YELLOW}Connection to [GOOGLE], Press Enter when done...${C_RST}"
     read -p ""
+    #connect opera
     xdg-open "https://auth.opera.com/account/authenticate/email"
     echo -e "${C_YELLOW}Connection to [OPERA], Press Enter when done...${C_RST}"
     read -p ""
