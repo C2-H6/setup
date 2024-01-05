@@ -126,18 +126,19 @@ function configTerminal {
     echo -e "${C_YELLOW}Config xfce4, Press Enter when done...${C_RST}"
     read -p ""
 
-curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh > oh-my-zsh.sh
-sed -i "s:env zsh:exit:g" oh-my-zsh.sh
-chmod 755 oh-my-zsh.sh
-./oh-my-zsh.sh
-rm oh-my-zsh.sh
+#curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh > oh-my-zsh.sh
+#sed -i "s:env zsh:exit:g" oh-my-zsh.sh
+#chmod 755 oh-my-zsh.sh
+#./oh-my-zsh.sh
+#rm oh-my-zsh.sh
 #no error check here: remote install.sh has a chsh error
-chsh $USER -s /usr/bin/zsh
+#chsh $USER -s /usr/bin/zsh
 
     # Install zsh, Oh My Zsh
-    #if [ ! -d "$HOME/.oh-my-zsh" ]; then
-    #    source <(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)
-    #fi
+    if [ ! -d "$HOME/.oh-my-zsh" ]; then
+        source <(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)
+        exit
+    fi
 
 
     # Add alias
@@ -204,8 +205,7 @@ sys_upgrade
 
 startConfig
 
-#rm -- "$0"
-#sudo reboot
-
-    # Install zsh, Oh My Zsh
-
+    echo -e "${C_YELLOW}End of the setup, Press Enter when done...${C_RST}"
+    read -p ""
+    #rm -- "$0"
+    #sudo reboot
