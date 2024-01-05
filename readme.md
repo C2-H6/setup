@@ -3,7 +3,7 @@
 
 ## Ubuntu
 ``` bash
-sudo snap refresh && sudo snap install curl
+sudo apt update && sudo apt install -y curl
 ```
 
 ## Manjaro
