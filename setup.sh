@@ -126,11 +126,19 @@ function configTerminal {
     echo -e "${C_YELLOW}[o] : display border${C_RST}"
     read -p ""
 
+curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh > oh-my-zsh.sh
+sed -i "s:env zsh:exit:g" oh-my-zsh.sh
+chmod 755 oh-my-zsh.sh
+./oh-my-zsh.sh
+rm oh-my-zsh.sh
+#no error check here: remote install.sh has a chsh error
+chsh $USER -s /usr/bin/zsh
+handle_error $?
     # Install zsh, Oh My Zsh
-    install zsh
-    if [ ! -d "$HOME/.oh-my-zsh" ]; then
-        source <(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)
-    fi
+    #install zsh
+    #if [ ! -d "$HOME/.oh-my-zsh" ]; then
+    #    source <(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)
+    #fi
 
 
     # Add alias
@@ -185,7 +193,7 @@ function startConfig {
     #configObsidian
 
     configTerminal
-    configOS
+    configOs
 }
 
 
