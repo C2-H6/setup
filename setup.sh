@@ -127,6 +127,7 @@ function configTerminal {
 
     # Install zsh, Oh My Zsh
     if [ ! -d "$HOME/.oh-my-zsh" ]; then
+        echo -e "${C_YELLOW}write : [exit] once new shell open, Press Enter when understand...${C_RST}"
         sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
     fi
 
@@ -176,11 +177,11 @@ function configWebBrowser {
 }
 
 function startConfig {
-    #configWebBrowser
-    #configGit
-    #configOther
-    #configIde
-    #configObsidian
+    configWebBrowser
+    configGit
+    configOther
+    configIde
+    configObsidian
 
     configTerminal
     configOs
@@ -195,7 +196,7 @@ sys_upgrade
 
 startConfig
 
-echo -e "${C_YELLOW}End of the setup, Press Enter when done...${C_RST}"
+echo -e "${C_YELLOW}The PC will reboot, Press Enter when done...${C_RST}"
 read -p ""
 rm -- "$0"
 sudo reboot
