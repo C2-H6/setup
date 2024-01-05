@@ -135,7 +135,6 @@ function configTerminal {
 
     # Add alias
     echo "alias c='clear'" >> ~/.zshrc
-    source ~/.zshrc
 }
 
 function configWebBrowser {
