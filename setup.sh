@@ -18,10 +18,10 @@ declare -A package_managers=(
     ["manjaro"]="pacman -S --noconfirm"
 )
 
-#declare -A remove=(
-#    ["ubuntu"]="apt purge"
-#    ["manjaro"]="sudo pacman -Rns" 
-#)
+declare -A remove=(
+    ["ubuntu"]="apt purge"
+    ["manjaro"]="sudo pacman -Rns" 
+)
 
 
 ##----------------------------------------------- OS related information ------------------------------------------------##
@@ -46,9 +46,10 @@ function install {
     sudo ${package_managers[$os]} "$1"
 }
 
-#function remove {
-#    sudo ${remove[$os]} "$1"
-#}
+function remove {
+    sudo ${remove[$os]} "$1"
+}
+
 
 ##----------------------------------------------- All program ------------------------------------------------##
 
@@ -69,8 +70,6 @@ function configGit {
     read -p ""
 }
 
-
-
 function configOther {
     #connect discord
     install discord
@@ -87,8 +86,6 @@ function configObsidian {
     read -p ""
 }
 
-
-
 function configIde {
     install code
     code
@@ -97,7 +94,7 @@ function configIde {
 }
 
 function configOs {
-    #Download i3, amd wallpaper
+    #Download i3, and wallpaper
     curl -fsSL https://github.com/C2-H6/setup/raw/main/i3/config.sh -o ~/.i3/config
     curl -o ~/.i3/wallpaper.png -fsSL https://github.com/C2-H6/setup/raw/main/wallpaper/1.png
     curl -o ~/.i3/hello.png -fsSL https://github.com/C2-H6/setup/raw/main/wallpaper/4.png
@@ -105,6 +102,7 @@ function configOs {
     #Download alt packages
     install picom
     install xfce4-power-manager
+    install feh
     #police d'ecriture : xft:URWGothic-Book
 
     if [ "$os" = "ubuntu" ]; then
@@ -112,28 +110,30 @@ function configOs {
     fi
 }
 
-function configTerminal { #when open zsh rc don't continue the script
-    # install terminal
+function configTerminal {
+    # Install terminal
     install xfce4-terminal
     
-    # config xfce
-    # transparent
-    # pas de bar en haut
-    # police xft:URWGothic-Book
-    # pas de bar coulissante de cote
-
+    # Config xfce
+    echo -e "${C_YELLOW}Config xfce4, Press Enter when done...${C_RST}"
+    echo -e "${C_YELLOW}-----  Apparence :  -----${C_RST}"
+    echo -e "${C_YELLOW}[o] : Use system font${C_RST}"
+    echo -e "${C_YELLOW}[--] : Transparent backround${C_RST}"
+    echo -e "${C_YELLOW}[o] : display menu bar${C_RST}"
+    echo -e "${C_YELLOW}[o] : display border${C_RST}"
+    read -p ""
 
     # Install zsh, Oh My Zsh
     install zsh
     sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
-
-    # add alias
+    # Add alias
     echo "alias c='clear'" >> ~/.zshrc
     source ~/.zshrc
 }
 
 function configWebBrowser {
+    # Install opera and make it the default web browser
     if [ "$os" = "ubuntu" ]; then
         sudo sh -c 'echo "deb http://deb.opera.com/opera/ stable non-free" >> /etc/apt/sources.list.d/opera.list'
         sudo sh -c 'wget -O - http://deb.opera.com/archive.key | apt-key add -'
@@ -145,7 +145,6 @@ function configWebBrowser {
         remove palemoon        
         xdg-settings set default-web-browser opera.desktop
     fi
-
 
     #open opera
     echo -e "${C_YELLOW}Open : [OPERA], Press Enter when done...${C_RST}"
@@ -193,5 +192,5 @@ sys_upgrade
 
 startConfig
 
-#rm -- "$0"
-#sudo reboot
+rm -- "$0"
+sudo reboot
