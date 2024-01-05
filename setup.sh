@@ -8,11 +8,13 @@ EMAIL="c2h6.dev@gmail.com"
 
 declare -A updates=(
     ["ubuntu"]="snap refresh"
+    ["ubuntuV2"]="apt -y update && sudo apt -y upgrade"
     ["manjaro"]="pacman --noconfirm -Syu"
 )
 
 declare -A package_managers=(
     ["ubuntu"]="snap install"
+    ["ubuntuV2"]="apt install -y"
     ["manjaro"]="pacman -S --noconfirm"
 )
 
@@ -141,8 +143,9 @@ function configOs {
 
 function configWebBrowser {
     install opera
-    mkdir -p $HOME/.config/opera/Crash\ Reports/attachments/13870b39-6922-4783-8a05-227bfd3e19e5
+    #mkdir -p $HOME/.config/opera/Crash\ Reports/attachments/13870b39-6922-4783-8a05-227bfd3e19e5
 
+    #make opera default browser
     if [ -n "$BROWSER" ]; then
         sed -i 's|^export BROWSER=.*$|export BROWSER=/usr/bin/opera.desktop|' ~/.profile
         #remove palemoon
@@ -154,6 +157,9 @@ function configWebBrowser {
         xdg-settings set default-web-browser opera.desktop
     fi
 
+    #open opera
+    echo -e "${C_YELLOW}Open : [OPERA], Press Enter when done...${C_RST}"
+    read -p ""
 
     #connect google
     xdg-open "https://www.google.com/webhp"
