@@ -135,7 +135,6 @@ rm oh-my-zsh.sh
 chsh $USER -s /usr/bin/zsh
 
     # Install zsh, Oh My Zsh
-    #install zsh
     #if [ ! -d "$HOME/.oh-my-zsh" ]; then
     #    source <(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)
     #fi
