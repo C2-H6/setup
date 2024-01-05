@@ -134,8 +134,10 @@ function configTerminal {
 
     # Install zsh, Oh My Zsh
     if [ ! -d "$HOME/.oh-my-zsh" ]; then
-        source <(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)
-        exit
+        sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+        #source <(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)
+        #exit
     fi
 
 
