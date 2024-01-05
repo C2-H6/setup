@@ -104,17 +104,8 @@ function configOs {
     #police d'ecriture : xft:URWGothic-Book
 
 
+    install i3
 
-    #install i3
-    if [ "$os" == "manjaro" ]; then
-        echo "Le système d'exploitation est Manjaro."
-
-        install i3-wm # pas le meme nom par prog
-
-    elif [ "$os" == "ubuntu" ]; then
-        echo "Le système d'exploitation est Ubuntu."
-        install i3
-    fi
 }
 
 function configTerminal { #when open zsh rc don't continue the script
@@ -148,19 +139,16 @@ function configWebBrowser {
         install opera-stable
         xdg-settings set default-web-browser opera.desktop
     elif [ -n "$BROWSER" ]; then
+        install opera
         sed -i 's|^export BROWSER=.*$|export BROWSER=/usr/bin/opera.desktop|' ~/.profile
         #remove palemoon
-
         #xdg-mime query default x-scheme-handler/https
         #xdg-mime default google-chrome.desktop x-scheme-handler/https
         #xdg-mime default google-chrome.desktop x-scheme-handler/http
-        install opera
+        
+        xdg-settings set default-web-browser opera.desktop
     fi
 
-
-    # opera default browser
-    else
-    fi
 
     #open opera
     echo -e "${C_YELLOW}Open : [OPERA], Press Enter when done...${C_RST}"
@@ -188,8 +176,8 @@ function configWebBrowser {
 }
 
 function startConfig {
-    #configWebBrowser
-    configTerminal
+    configWebBrowser
+    #configTerminal
     #configGit
     #configOther
     #configIde
