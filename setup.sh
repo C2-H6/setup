@@ -118,12 +118,12 @@ function configTerminal {
     install xfce4-terminal
     
     # Config xfce
-    echo -e "${C_YELLOW}Config xfce4, Press Enter when done...${C_RST}"
     echo -e "${C_YELLOW}-----  Apparence :  -----${C_RST}"
     echo -e "${C_YELLOW}[o] : Use system font${C_RST}"
     echo -e "${C_YELLOW}[--] : Transparent backround${C_RST}"
     echo -e "${C_YELLOW}[o] : display menu bar${C_RST}"
     echo -e "${C_YELLOW}[o] : display border${C_RST}"
+    echo -e "${C_YELLOW}Config xfce4, Press Enter when done...${C_RST}"
     read -p ""
 
 curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh > oh-my-zsh.sh
@@ -133,7 +133,7 @@ chmod 755 oh-my-zsh.sh
 rm oh-my-zsh.sh
 #no error check here: remote install.sh has a chsh error
 chsh $USER -s /usr/bin/zsh
-handle_error $?
+
     # Install zsh, Oh My Zsh
     #install zsh
     #if [ ! -d "$HOME/.oh-my-zsh" ]; then
