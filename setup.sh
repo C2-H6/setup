@@ -7,12 +7,12 @@ USERNAME="C2-H6"
 EMAIL="c2h6.dev@gmail.com"
 
 declare -A updates=(
-    ["ubuntu"]="apt -y update && sudo apt -y upgrade"
+    ["ubuntu"]="snap refresh"
     ["manjaro"]="pacman --noconfirm -Syu"
 )
 
 declare -A package_managers=(
-    ["ubuntu"]="apt install -y"
+    ["ubuntu"]="snap install"
     ["manjaro"]="pacman -S --noconfirm"
 )
 
@@ -144,14 +144,7 @@ function configWebBrowser {
 
     if [ -n "$BROWSER" ]; then
         sed -i 's|^export BROWSER=.*$|export BROWSER=/usr/bin/opera.desktop|' ~/.profile
-        remove palemoon
-
-        #sed -i '/^x-scheme-handler\/http=/ s|=.*$|=opera.desktop|' ~/.config/mimeapps.list
-        #sed -i '/^x-scheme-handler\/https=/ s|=.*$|=opera.desktop|' ~/.config/mimeapps.list
-        #sed -i '/^text\/html=/ s|=.*$|=opera.desktop|' ~/.config/mimeapps.list
-
-        #source ~/.profile
-
+        #remove palemoon
 
         #xdg-mime query default x-scheme-handler/https
         #xdg-mime default google-chrome.desktop x-scheme-handler/https
