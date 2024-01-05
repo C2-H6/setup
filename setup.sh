@@ -120,7 +120,7 @@ function configTerminal {
     # Config xfce
     echo -e "${C_YELLOW}-----  Apparence :  -----${C_RST}"
     echo -e "${C_YELLOW}[o] : Use system font${C_RST}"
-    echo -e "${C_YELLOW}[--] : Transparent backround${C_RST}"
+    echo -e "${C_YELLOW}[--] : Transparent background${C_RST}"
     echo -e "${C_YELLOW}[o] : display menu bar${C_RST}"
     echo -e "${C_YELLOW}[o] : display border${C_RST}"
     echo -e "${C_YELLOW}Config xfce4, Press Enter when done...${C_RST}"
