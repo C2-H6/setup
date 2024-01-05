@@ -127,15 +127,15 @@ function configTerminal {
 
     # Install zsh, Oh My Zsh
     if [ ! -d "$HOME/.oh-my-zsh" ]; then
-        curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh > oh-my-zsh.sh
-      sed -i "s:env zsh:exit:g" oh-my-zsh.sh
-        chmod 755 oh-my-zsh.sh
-        ./oh-my-zsh.sh
-        rm oh-my-zsh.sh
-        chsh $USER -s /usr/bin/zsh
+        #curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh > oh-my-zsh.sh
+      #sed -i "s:env zsh:exit:g" oh-my-zsh.sh
+      #  chmod 755 oh-my-zsh.sh
+      #  ./oh-my-zsh.sh
+      #  rm oh-my-zsh.sh
+      #  chsh $USER -s /usr/bin/zsh
         
 
-        #sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+        sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
         #source <(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)
         #exit
     fi
@@ -207,5 +207,5 @@ startConfig
 
 echo -e "${C_YELLOW}End of the setup, Press Enter when done...${C_RST}"
 read -p ""
-    #rm -- "$0"
-    #sudo reboot
+rm -- "$0"
+sudo reboot
