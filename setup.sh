@@ -206,3 +206,6 @@ startConfig
 
 #rm -- "$0"
 #sudo reboot
+
+    # Install zsh, Oh My Zsh
+
