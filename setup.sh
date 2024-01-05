@@ -7,14 +7,14 @@ USERNAME="C2-H6"
 EMAIL="c2h6.dev@gmail.com"
 
 declare -A updates=(
-    ["ubuntu"]="snap refresh"
-    ["ubuntuV2"]="apt -y update && sudo apt -y upgrade"
+    ["ubuntu"]="apt -y update && sudo apt -y upgrade"
+    ["ubuntuV2"]="snap refresh"
     ["manjaro"]="pacman --noconfirm -Syu"
 )
 
 declare -A package_managers=(
-    ["ubuntu"]="snap install"
-    ["ubuntuV2"]="apt install -y"
+    ["ubuntu"]="apt install -y"
+    ["ubuntuV2"]="snap install"
     ["manjaro"]="pacman -S --noconfirm"
 )
 
@@ -142,7 +142,14 @@ function configOs {
 }
 
 function configWebBrowser {
-    install opera
+    if [ "$os" = "ubuntu" ]; then
+        sudo sh -c 'echo "deb http://deb.opera.com/opera/ stable non-free" >> /etc/apt/sources.list.d/opera.list'
+        sudo sh -c 'wget -O - http://deb.opera.com/archive.key | apt-key add -'
+        install opera-stable
+    else
+        install opera
+    fi
+
     #mkdir -p $HOME/.config/opera/Crash\ Reports/attachments/13870b39-6922-4783-8a05-227bfd3e19e5
 
     #make opera default browser
