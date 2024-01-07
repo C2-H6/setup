@@ -24,15 +24,14 @@ bindsym $mod+Shift+q kill
 
 # start program launcher
 bindsym $mod+d exec --no-startup-id dmenu_run
-
-bindsym $mod+o exec opera
 bindsym $mod+Shift+o exec obsidian
 bindsym $mod+c exec code
 bindsym $mod+p exec discord
 
-######################   Manjaro parameter  ######################
+######################   Ubuntu parameter  ######################
 
 bindsym $mod+Ctrl+b exec pnautilus
+bindsym $mod+o exec opera-stable
 exec --no-startup-id update-manager
 
 ############################################

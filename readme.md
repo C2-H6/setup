@@ -30,7 +30,7 @@ https://github.com/kayofeld/script-installation-ordinateur-epitech
 
 
 
-1. installer et setup i3 pour ubuntu
+1. installer et setup i3 pour ubuntu (opera pas stable pour le moment)
 2. opera sauvegarde pas tts
 
 
