@@ -7,8 +7,9 @@ USERNAME="C2-H6"
 EMAIL="c2h6.dev@gmail.com"
 
 declare -A updates=(
-    ["ubuntu"]="snap refresh"
-    ["ubuntuV2"]="sudo apt -y update"
+    ["ubuntu"]="snap refresh && sudo apt -y update"
+    #["ubuntu"]="snap refresh"
+    #["ubuntuV2"]="sudo apt -y update"
     ["manjaro"]="pacman --noconfirm -Syu"
 )
 
@@ -23,7 +24,8 @@ declare -A remove=(
     ["manjaro"]="sudo pacman -Rns" 
 )
 
-
+#snap casual
+#apt technical
 ##----------------------------------------------- OS related information ------------------------------------------------##
 
 
