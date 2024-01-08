@@ -31,7 +31,7 @@ bindsym $mod+p exec discord
 
 ######################   Ubuntu parameter  ######################
 
-bindsym $mod+Ctrl+b exec pnautilus
+bindsym $mod+Ctrl+b exec nautilus
 exec --no-startup-id update-manager
 
 ############################################
@@ -240,11 +240,11 @@ colors {
 bindsym $mod+m bar mode toggle
 
 # Set inner/outer gaps
-gaps inner 14
-gaps outer -2
+#aps inner 14
+#gaps outer -2
 
 # Smart gaps (Only more than one container on the workspace)
-smart_gaps on
+#smart_gaps on
 
 # Smart borders (Only more than one container on the workspace)
-smart_borders on
+#smart_borders on
