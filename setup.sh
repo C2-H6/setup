@@ -122,8 +122,11 @@ function configOther {
 }
 
 function configIde {
-    install code 
-    code
+    if [ "$os" = "ubuntu" ]; then
+        install code --classic
+    elif [ "$os" = "manjaro" ]; then
+        install code
+    fi
     echo -e "${C_YELLOW}Setting Sync download and updtate, Press Enter when done...${C_RST}"
     read -p ""
 }
@@ -157,10 +160,6 @@ function configWebBrowser {
         sudo add-apt-repository 'deb https://deb.opera.com/opera-stable/ stable non-free'
         sudo apt-get update
         sudo apt install -V opera-stable
-        #sudo sh -c 'echo "deb http://deb.opera.com/opera/ stable non-free" >> /etc/apt/sources.list.d/opera.list'
-        #sudo sh -c 'wget -O - http://deb.opera.com/archive.key | apt-key add -'
-        #sys_upgrade
-        #sudo ${install[ubuntuV2]} opera-stable
     elif [ "$os" = "manjaro" ]; then
         install opera
         remove palemoon        
