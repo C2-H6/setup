@@ -153,17 +153,21 @@ function configGit {
 function configWebBrowser {
     # Install opera and make it the default web browser
     if [ "$os" = "ubuntu" ]; then
-        sudo sh -c 'echo "deb http://deb.opera.com/opera/ stable non-free" >> /etc/apt/sources.list.d/opera.list'
-        sudo sh -c 'wget -O - http://deb.opera.com/archive.key | apt-key add -'
-        sys_upgrade
-        sudo ${install[ubuntuV2]} opera-stable
-        xdg-settings set default-web-browser opera.desktop
+        wget -qO - https://deb.opera.com/archive.key | sudo apt-key add -
+        sudo add-apt-repository 'deb https://deb.opera.com/opera-stable/ stable non-free'
+        sudo apt-get update
+        sudo apt install -V opera-stable
+        #sudo sh -c 'echo "deb http://deb.opera.com/opera/ stable non-free" >> /etc/apt/sources.list.d/opera.list'
+        #sudo sh -c 'wget -O - http://deb.opera.com/archive.key | apt-key add -'
+        #sys_upgrade
+        #sudo ${install[ubuntuV2]} opera-stable
     elif [ "$os" = "manjaro" ]; then
         install opera
         remove palemoon        
-        xdg-settings set default-web-browser opera.desktop
     fi
-
+       
+    #default web-browser
+    xdg-settings set default-web-browser opera.desktop
     #open opera
     echo -e "${C_YELLOW}Open : [OPERA], Press Enter when done...${C_RST}"
     read -p ""
