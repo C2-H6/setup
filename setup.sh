@@ -55,15 +55,9 @@ function remove {
 function configOs {
     if [ "$os" = "ubuntu" ]; then
         curl -fsSL https://github.com/C2-H6/setup/raw/main/i3/config-ubuntu.sh -o ~/.i3/config
-        sudo ${install["ubuntuV2"]} i3
-        sudo ${install["ubuntuV2"]} picom
-        sudo ${install["ubuntuV2"]} xfce4-power-manager
-        sudo ${install["ubuntuV2"]} feh
+        install i3
     elif [ "$os" = "manjaro" ]; then
         curl -fsSL https://github.com/C2-H6/setup/raw/main/i3/config-manjaro.sh -o ~/.i3/config
-        install picom
-        install xfce4-power-manager
-        install feh
     fi
 
     #Download wallpaper 
@@ -71,7 +65,9 @@ function configOs {
     curl -o ~/.i3/hello.png -fsSL https://github.com/C2-H6/setup/raw/main/wallpaper/4.png
 
     #Download alt packages
-
+    install picom
+    install xfce4-power-manager
+    install feh
     #police d'ecriture : xft:URWGothic-Book
 
 
@@ -79,11 +75,7 @@ function configOs {
 
 function configTerminal {
     # Install terminal
-    if [ "$os" = "ubuntu" ]; then
-        sudo ${install["ubuntuV2"]} xfce4-terminal
-    elif [ "$os" = "manjaro" ]; then
-        install xfce4-terminal    
-    fi
+    install xfce4-terminal 
     
     # Config xfce
     echo -e "${C_YELLOW}-----  Apparence :  -----${C_RST}"
@@ -94,11 +86,8 @@ function configTerminal {
     read -p ""
 
 
-    # Instqll zsh
-    if [ "$os" = "ubuntu" ]; then
-        sudo ${install["ubuntuV2"]} zsh  
-    fi
-
+    # Install zsh
+    install zsh
     # Install Oh My Zsh
     if [ ! -d "$HOME/.oh-my-zsh" ]; then
         echo -e "${C_YELLOW}write : [exit] once new shell open, Press Enter when understand...${C_RST}"
@@ -210,6 +199,9 @@ function startConfig {
     #configIde
     #configObsidian
 
+    if [ "$os" = "ubuntuV2" ]; then
+        os="ubuntuV2"
+    fi
     #configTerminal
     configOs
 }
