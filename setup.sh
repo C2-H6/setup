@@ -100,11 +100,10 @@ function configTerminal {
 
 function configObsidian {
     if [ "$os" = "ubuntu" ]; then
-        install obsidian --classic
+        sudo ${install["ubuntu"]} obsidian --classic
     elif [ "$os" = "manjaro" ]; then
         install obsidian
     fi
-
     
     install -S noto-fonts-emoji
 
@@ -122,15 +121,10 @@ function configOther {
 }
 
 function configIde {
-    #if [ "$os" = "ubuntu" ]; then
-    #    install code --classic
-    #elif [ "$os" = "manjaro" ]; then
-    #    install code
-    #fi
     if [ "$os" = "ubuntu" ]; then
         sudo ${install["ubuntu"]} code --classic
     elif [ "$os" = "manjaro" ]; then
-        sudo ${install["manjaro"]} code
+        install code
     fi
     echo -e "${C_YELLOW}Setting Sync download and updtate, Press Enter when done...${C_RST}"
     read -p ""
