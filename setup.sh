@@ -92,7 +92,7 @@ function configTerminal {
 
     # Instqll zsh
     if [ "$os" = "ubuntu" ]; then
-        sudo ${install["ubuntuV2"]} szh  
+        sudo ${install["ubuntuV2"]} zsh  
     fi
 
     # Install Oh My Zsh
@@ -204,7 +204,7 @@ function startConfig {
     #configGit
     #configOther
     #configIde
-    configObsidian
+    #configObsidian
 
     configTerminal
     configOs
