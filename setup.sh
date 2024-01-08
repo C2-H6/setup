@@ -40,6 +40,9 @@ function get_os {
 
 function sys_upgrade {
     sudo ${updates[$os]}
+    if [ "$os" = "ubuntu" ]; then
+        sudo ${updates[ubuntuV2]}
+    fi
 }
 
 function install {
@@ -154,11 +157,11 @@ function configTerminal {
 
 function configWebBrowser {
     # Install opera and make it the default web browser
-    if [ "$os" = "ubuntu" ]; then
+    if [ "$os" = "ubuntu" ];
         sudo sh -c 'echo "deb http://deb.opera.com/opera/ stable non-free" >> /etc/apt/sources.list.d/opera.list'
         sudo sh -c 'wget -O - http://deb.opera.com/archive.key | apt-key add -'
-        sudo ${updates["ubuntuV2"]}
-        sudo ${install["ubuntuV2"]} opera-stable
+        sudo ${updates[ubuntuV2]}
+        sudo ${install[ubuntuV2]} opera-stable
         xdg-settings set default-web-browser opera.desktop
     elif [ "$os" = "manjaro" ]; then
         install opera
@@ -193,7 +196,7 @@ function configWebBrowser {
 }
 
 function startConfig {
-    configWebBrowser
+    #configWebBrowser
     #configGit
     #configOther
     #configIde
