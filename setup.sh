@@ -8,7 +8,7 @@ EMAIL="c2h6.dev@gmail.com"
 
 declare -A updates=(
     ["ubuntu"]="snap refresh"
-     ["ubuntuV2"]="sudo apt -y update"
+    ["ubuntuV2"]="sudo apt -y update"
     ["manjaro"]="pacman --noconfirm -Syu"
 )
 
