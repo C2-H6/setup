@@ -55,9 +55,15 @@ function remove {
 function configOs {
     if [ "$os" = "ubuntu" ]; then
         curl -fsSL https://github.com/C2-H6/setup/raw/main/i3/config-ubuntu.sh -o ~/.i3/config
-        install i3
+        sudo ${install["ubuntuV2"]} i3
+        sudo ${install["ubuntuV2"]} picom
+        sudo ${install["ubuntuV2"]} xfce4-power-manager
+        sudo ${install["ubuntuV2"]} feh
     elif [ "$os" = "manjaro" ]; then
         curl -fsSL https://github.com/C2-H6/setup/raw/main/i3/config-manjaro.sh -o ~/.i3/config
+        install picom
+        install xfce4-power-manager
+        install feh
     fi
 
     #Download wallpaper 
@@ -65,9 +71,7 @@ function configOs {
     curl -o ~/.i3/hello.png -fsSL https://github.com/C2-H6/setup/raw/main/wallpaper/4.png
 
     #Download alt packages
-    install picom
-    install xfce4-power-manager
-    install feh
+
     #police d'ecriture : xft:URWGothic-Book
 
 
