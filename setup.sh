@@ -59,57 +59,6 @@ function remove {
 ##----------------------------------------------- All program ------------------------------------------------##
 
 
-function configGit {
-    if [ "$os" = "ubuntu" ]; then
-        sudo ${install["ubuntuV2"]} git
-    elif [ "$os" = "manjaro" ]; then
-        install git
-    fi
-
-    git config --global user.name "$USERNAME"
-    git config --global user.email "$EMAIL"
-
-    ssh-keygen -t rsa -b 4096 -C "$EMAIL"
-    eval "$(ssh-agent -s)"
-    ssh-add ~/.ssh/id_rsa
-    
-    cat ~/.ssh/id_rsa.pub
-
-    xdg-open "https://github.com/settings/keys"
-    echo -e "${C_YELLOW}copy and past the token in [github], Press Enter when done...${C_RST}"
-    read -p ""
-}
-
-function configOther {
-    install discord
-
-    #connect discord
-    echo -e "${C_YELLOW}open : [DISCORD] and configure it, Press Enter when done...${C_RST}"
-    read -p ""
-}
-
-function configObsidian {
-    if [ "$os" = "ubuntu" ]; then
-        install obsidian --classic
-    elif [ "$os" = "manjaro" ]; then
-        install obsidian
-    fi
-
-    
-    install -S noto-fonts-emoji
-
-    git clone git@github.com:C2-H6/obsidianBackup.git
-    echo -e "${C_YELLOW}open : [OBSIDIAN]  and configure it, Press Enter when done...${C_RST}"
-    read -p ""
-}
-
-function configIde {
-    install code 
-    code
-    echo -e "${C_YELLOW}Setting Sync download and updtate, Press Enter when done...${C_RST}"
-    read -p ""
-}
-
 function configOs {
     if [ "$os" = "ubuntu" ]; then
         curl -fsSL https://github.com/C2-H6/setup/raw/main/i3/config-ubuntu.sh -o ~/.i3/config
@@ -155,6 +104,58 @@ function configTerminal {
     # Add alias
     echo "alias c='clear'" >> ~/.zshrc
 }
+
+function configObsidian {
+    if [ "$os" = "ubuntu" ]; then
+        install obsidian --classic
+    elif [ "$os" = "manjaro" ]; then
+        install obsidian
+    fi
+
+    
+    install -S noto-fonts-emoji
+
+    git clone git@github.com:C2-H6/obsidianBackup.git
+    echo -e "${C_YELLOW}open : [OBSIDIAN]  and configure it, Press Enter when done...${C_RST}"
+    read -p ""
+}
+
+function configOther {
+    install discord
+
+    #connect discord
+    echo -e "${C_YELLOW}open : [DISCORD] and configure it, Press Enter when done...${C_RST}"
+    read -p ""
+}
+
+function configIde {
+    install code 
+    code
+    echo -e "${C_YELLOW}Setting Sync download and updtate, Press Enter when done...${C_RST}"
+    read -p ""
+}
+
+function configGit {
+    if [ "$os" = "ubuntu" ]; then
+        sudo ${install["ubuntuV2"]} git
+    elif [ "$os" = "manjaro" ]; then
+        install git
+    fi
+
+    git config --global user.name "$USERNAME"
+    git config --global user.email "$EMAIL"
+
+    ssh-keygen -t rsa -b 4096 -C "$EMAIL"
+    eval "$(ssh-agent -s)"
+    ssh-add ~/.ssh/id_rsa
+    
+    cat ~/.ssh/id_rsa.pub
+
+    xdg-open "https://github.com/settings/keys"
+    echo -e "${C_YELLOW}copy and past the token in [github], Press Enter when done...${C_RST}"
+    read -p ""
+}
+
 
 function configWebBrowser {
     # Install opera and make it the default web browser
