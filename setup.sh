@@ -200,7 +200,7 @@ function startConfig {
     #configIde
     #configObsidian
 
-    if [ "$os" = "ubuntuV2" ]; then
+    if [ "$os" = "ubuntu" ]; then
         os="ubuntuV2"
     fi
     configTerminal
