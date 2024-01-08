@@ -7,14 +7,14 @@ USERNAME="C2-H6"
 EMAIL="c2h6.dev@gmail.com"
 
 declare -A updates=(
-    #["ubuntu"]="sudo apt -y update"
     ["ubuntu"]="snap refresh"
+     ["ubuntuV2"]="sudo apt -y update"
     ["manjaro"]="pacman --noconfirm -Syu"
 )
 
 declare -A install=(
-    #["ubuntu"]="apt install -y"
     ["ubuntu"]="snap install"
+    ["ubuntuV2"]="apt install -y"
     ["manjaro"]="pacman -S --noconfirm"
 )
 
@@ -80,7 +80,13 @@ function configOther {
 }
 
 function configObsidian {
-    install obsidian
+    if [ "$os" = "ubuntu" ]; then
+        install obsidian --classic
+    elif [ "$os" = "manjaro" ]; then
+        install obsidian
+    fi
+
+    
     install -S noto-fonts-emoji
 
     git clone git@github.com:C2-H6/obsidianBackup.git
@@ -89,7 +95,7 @@ function configObsidian {
 }
 
 function configIde {
-    install code
+    install code 
     code
     echo -e "${C_YELLOW}Setting Sync download and updtate, Press Enter when done...${C_RST}"
     read -p ""
@@ -146,8 +152,8 @@ function configWebBrowser {
     if [ "$os" = "ubuntu" ]; then
         sudo sh -c 'echo "deb http://deb.opera.com/opera/ stable non-free" >> /etc/apt/sources.list.d/opera.list'
         sudo sh -c 'wget -O - http://deb.opera.com/archive.key | apt-key add -'
-        sudo ${updates[$os]}
-        install opera-stable
+        sudo ${updates["ubuntuV2"]}
+        sudo ${install["ubuntuV2"]} opera-stable
         xdg-settings set default-web-browser opera.desktop
     elif [ "$os" = "manjaro" ]; then
         install opera
@@ -182,8 +188,8 @@ function configWebBrowser {
 }
 
 function startConfig {
-    #configWebBrowser
-    #configGit
+    configWebBrowser
+    configGit
     configOther
     configIde
     configObsidian
