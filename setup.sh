@@ -103,9 +103,8 @@ function configObsidian {
         sudo ${install["ubuntu"]} obsidian --classic
     elif [ "$os" = "manjaro" ]; then
         install obsidian
+        install noto-fonts-emoji
     fi
-    
-    install noto-fonts-emoji
 
     git clone git@github.com:C2-H6/obsidianBackup.git
     echo -e "${C_YELLOW}open : [OBSIDIAN]  and configure it, Press Enter when done...${C_RST}"
