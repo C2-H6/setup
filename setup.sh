@@ -73,10 +73,10 @@ function configGit {
 
 function configOther {
     if [ "$os" = "ubuntu" ]; then
-        snap refresh
-        snap install discord
-        #sudo ${updates[ubuntuV2]}
-        #sudo ${install[ubuntuV2]} discord
+        #snap refresh
+        #snap install discord
+        sudo ${updates[ubuntuV2]}
+        sudo ${install[ubuntuV2]} discord
     elif [ "$os" = "manjaro" ]; then
         install discord
     fi
