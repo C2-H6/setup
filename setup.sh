@@ -7,7 +7,7 @@ USERNAME="C2-H6"
 EMAIL="c2h6.dev@gmail.com"
 
 declare -A updates=(
-    ["ubuntu"]="sudo snap refresh;sudo apt -y update"
+    ["ubuntu"]="snap refresh && apt -y update"
     ["manjaro"]="pacman --noconfirm -Syu"
 )
 
@@ -38,9 +38,6 @@ function get_os {
 
 function sys_upgrade {
     sudo ${updates[$os]}
-    if [ "$os" = "ubuntu" ]; then
-        sudo ${updates[ubuntuV2]}
-    fi
 }
 
 function install {
