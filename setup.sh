@@ -76,7 +76,7 @@ function configOs {
 function configTerminal {
     # Install terminal
     if [ "$os" = "ubuntu" ]; then
-    sudo ${install["ubuntuV2"]} xfce4-terminal
+        sudo ${install["ubuntuV2"]} xfce4-terminal
     elif [ "$os" = "manjaro" ]; then
         install xfce4-terminal    
     fi
