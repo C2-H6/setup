@@ -29,7 +29,7 @@ declare -A remove=(
 
 function get_os {
     if command -v apt-get &> /dev/null; then
-        os="ubuntu"
+        os="ubuntu"git
     elif command -v pacman &> /dev/null; then
         os="manjaro"
     else
@@ -55,7 +55,12 @@ function remove {
 
 
 function configGit {
-    install git
+    if [ "$os" = "ubuntu" ]; then
+        sudo ${updates["ubuntuV2"]}
+        sudo ${install["ubuntuV2"]} git
+    elif [ "$os" = "manjaro" ]; then
+        install git
+    fi
 
     git config --global user.name "$USERNAME"
     git config --global user.email "$EMAIL"
