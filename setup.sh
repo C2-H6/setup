@@ -53,7 +53,7 @@ function remove {
 
 
 function configOs {
-    if [ "$os" = "ubuntu" ]; then
+    if [ "$os" = "ubuntuV2" ]; then
         mkdir ~/.i3
         curl -fsSL https://github.com/C2-H6/setup/raw/main/i3/config-ubuntu.sh -o ~/.i3/config
         install i3
@@ -203,7 +203,7 @@ function startConfig {
     if [ "$os" = "ubuntu" ]; then
         os="ubuntuV2"
     fi
-    configTerminal
+    #configTerminal
     configOs
 }
 
