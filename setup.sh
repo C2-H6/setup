@@ -159,7 +159,7 @@ function configGit {
 
 function configWebBrowser {
     # Install opera and make it the default web browser
-    if [ "$os" = "ubuntu" ];
+    if [ "$os" = "ubuntu" ]; then
         sudo sh -c 'echo "deb http://deb.opera.com/opera/ stable non-free" >> /etc/apt/sources.list.d/opera.list'
         sudo sh -c 'wget -O - http://deb.opera.com/archive.key | apt-key add -'
         sudo ${install[ubuntuV2]} opera-stable
