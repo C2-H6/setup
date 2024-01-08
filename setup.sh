@@ -90,8 +90,12 @@ function configTerminal {
     read -p ""
 
 
+    # Instqll zsh
+    if [ "$os" = "ubuntu" ]; then
+        sudo ${install["ubuntuV2"]} szh  
+    fi
 
-    # Install zsh, Oh My Zsh
+    # Install Oh My Zsh
     if [ ! -d "$HOME/.oh-my-zsh" ]; then
         echo -e "${C_YELLOW}write : [exit] once new shell open, Press Enter when understand...${C_RST}"
         sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
