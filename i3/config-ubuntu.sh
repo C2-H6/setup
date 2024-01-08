@@ -239,9 +239,6 @@ colors {
 
 bindsym $mod+m bar mode toggle
 
-# Set inner/outer gaps
-gaps inner 14
-gaps outer -2
 
 # Smart gaps (Only more than one container on the workspace)
 smart_gaps on
