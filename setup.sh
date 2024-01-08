@@ -22,14 +22,12 @@ declare -A remove=(
     ["manjaro"]="sudo pacman -Rns" 
 )
 
-#snap casual
-#apt technical
 ##----------------------------------------------- OS related information ------------------------------------------------##
 
 
 function get_os {
     if command -v apt-get &> /dev/null; then
-        os="ubuntu"git
+        os="ubuntu"
     elif command -v pacman &> /dev/null; then
         os="manjaro"
     else
@@ -195,14 +193,14 @@ function configWebBrowser {
 }
 
 function startConfig {
-    configWebBrowser
+    #configWebBrowser
     #configGit
     #configOther
     #configIde
     #configObsidian
 
-    #configTerminal
-    #configOs
+    configTerminal
+    configOs
 }
 
 
