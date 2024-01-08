@@ -7,14 +7,14 @@ USERNAME="C2-H6"
 EMAIL="c2h6.dev@gmail.com"
 
 declare -A updates=(
-    ["ubuntu"]="sudo apt -y update"
-    ["ubuntuV2"]="snap refresh"
+    #["ubuntu"]="sudo apt -y update"
+    ["ubuntu"]="snap refresh"
     ["manjaro"]="pacman --noconfirm -Syu"
 )
 
 declare -A install=(
-    ["ubuntu"]="apt install -y"
-    ["ubuntuV2"]="snap install"
+    #["ubuntu"]="apt install -y"
+    ["ubuntu"]="snap install"
     ["manjaro"]="pacman -S --noconfirm"
 )
 
@@ -72,14 +72,7 @@ function configGit {
 }
 
 function configOther {
-    if [ "$os" = "ubuntu" ]; then
-        #snap refresh
-        #snap install discord
-        sudo ${updates[ubuntuV2]}
-        sudo ${install[ubuntuV2]} discord
-    elif [ "$os" = "manjaro" ]; then
-        install discord
-    fi
+    install discord
 
     #connect discord
     echo -e "${C_YELLOW}open : [DISCORD] and configure it, Press Enter when done...${C_RST}"
