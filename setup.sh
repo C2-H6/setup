@@ -19,7 +19,7 @@ declare -A install=(
 
 declare -A remove=(
     ["ubuntu"]="apt purge"
-    ["manjaro"]="sudo pacman -Rns" 
+    ["manjaro"]="pacman -Rns" 
 )
 
 ##----------------------------------------------- OS related information ------------------------------------------------##
@@ -155,6 +155,7 @@ function configWebBrowser {
     if [ "$os" = "ubuntu" ]; then
         sudo sh -c 'echo "deb http://deb.opera.com/opera/ stable non-free" >> /etc/apt/sources.list.d/opera.list'
         sudo sh -c 'wget -O - http://deb.opera.com/archive.key | apt-key add -'
+        sys_upgrade
         sudo ${install[ubuntuV2]} opera-stable
         xdg-settings set default-web-browser opera.desktop
     elif [ "$os" = "manjaro" ]; then
