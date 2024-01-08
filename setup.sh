@@ -196,8 +196,8 @@ function configWebBrowser {
     read -p ""
 }
 
-#function startConfig {
-   # configWebBrowser
+function startConfig {
+    configWebBrowser
     #configGit
     #configOther
     #configIde
@@ -205,7 +205,7 @@ function configWebBrowser {
 
     #configTerminal
     #configOs
-#}
+}
 
 
 ##----------------------------------------------- rest ------------------------------------------------##
@@ -214,7 +214,7 @@ function configWebBrowser {
 get_os
 sys_upgrade
 
-#tartConfig
+startConfig
 
 echo -e "${C_YELLOW}The PC will reboot, Press Enter when done...${C_RST}"
 read -p ""
