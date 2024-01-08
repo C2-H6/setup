@@ -193,11 +193,11 @@ function configWebBrowser {
 }
 
 function startConfig {
-    #configWebBrowser
-    #configGit
-    #configOther
-    #configIde
-    #configObsidian
+    configWebBrowser
+    configGit
+    configOther
+    configIde
+    configObsidian
 
     configTerminal
     configOs
