@@ -210,7 +210,7 @@ function startConfig {
     #configIde
     #configObsidian
 
-    configTerminal
+    #configTerminal
     configOs
 }
 
