@@ -61,7 +61,6 @@ function remove {
 
 function configGit {
     if [ "$os" = "ubuntu" ]; then
-        sudo ${updates["ubuntuV2"]}
         sudo ${install["ubuntuV2"]} git
     elif [ "$os" = "manjaro" ]; then
         install git
@@ -162,7 +161,6 @@ function configWebBrowser {
     if [ "$os" = "ubuntu" ];
         sudo sh -c 'echo "deb http://deb.opera.com/opera/ stable non-free" >> /etc/apt/sources.list.d/opera.list'
         sudo sh -c 'wget -O - http://deb.opera.com/archive.key | apt-key add -'
-        sudo ${updates[ubuntuV2]}
         sudo ${install[ubuntuV2]} opera-stable
         xdg-settings set default-web-browser opera.desktop
     elif [ "$os" = "manjaro" ]; then
@@ -215,7 +213,7 @@ function startConfig {
 get_os
 sys_upgrade
 
-startConfig
+#startConfig
 
 echo -e "${C_YELLOW}The PC will reboot, Press Enter when done...${C_RST}"
 read -p ""
