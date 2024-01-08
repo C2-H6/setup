@@ -7,9 +7,7 @@ USERNAME="C2-H6"
 EMAIL="c2h6.dev@gmail.com"
 
 declare -A updates=(
-    ["ubuntu"]="snap refresh && sudo apt -y update"
-    #["ubuntu"]="snap refresh"
-    #["ubuntuV2"]="sudo apt -y update"
+    ["ubuntu"]="sudo snap refresh; sudo apt -y update"
     ["manjaro"]="pacman --noconfirm -Syu"
 )
 
