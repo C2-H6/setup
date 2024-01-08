@@ -12,7 +12,7 @@ declare -A updates=(
     ["manjaro"]="pacman --noconfirm -Syu"
 )
 
-declare -A package_managers=(
+declare -A install=(
     ["ubuntu"]="apt install -y"
     ["ubuntuV2"]="snap install"
     ["manjaro"]="pacman -S --noconfirm"
@@ -43,7 +43,7 @@ function sys_upgrade {
 }
 
 function install {
-    sudo ${package_managers[$os]} "$1"
+    sudo ${install[$os]} "$1"
 }
 
 function remove {
@@ -72,8 +72,14 @@ function configGit {
 }
 
 function configOther {
+    if [ "$os" = "ubuntu" ]; then
+        sudo ${updates[ubuntuV2]}
+        sudo ${install[ubuntuV2]} discord
+    elif [ "$os" = "manjaro" ]; then
+        install discord
+    fi
+
     #connect discord
-    install discord
     echo -e "${C_YELLOW}open : [DISCORD] and configure it, Press Enter when done...${C_RST}"
     read -p ""
 }
@@ -181,8 +187,8 @@ function configWebBrowser {
 }
 
 function startConfig {
-    configWebBrowser
-    configGit
+    #configWebBrowser
+    #configGit
     configOther
     configIde
     configObsidian
