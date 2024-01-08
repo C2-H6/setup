@@ -122,10 +122,15 @@ function configOther {
 }
 
 function configIde {
+    #if [ "$os" = "ubuntu" ]; then
+    #    install code --classic
+    #elif [ "$os" = "manjaro" ]; then
+    #    install code
+    #fi
     if [ "$os" = "ubuntu" ]; then
-        install code --classic
+        sudo ${install["ubuntu"]} code --classic
     elif [ "$os" = "manjaro" ]; then
-        install code
+        sudo ${install["manjaro"]} code
     fi
     echo -e "${C_YELLOW}Setting Sync download and updtate, Press Enter when done...${C_RST}"
     read -p ""
