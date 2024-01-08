@@ -75,7 +75,11 @@ function configOs {
 
 function configTerminal {
     # Install terminal
-    install xfce4-terminal
+    if [ "$os" = "ubuntu" ]; then
+    sudo ${install["ubuntuV2"]} xfce4-terminal
+    elif [ "$os" = "manjaro" ]; then
+        install xfce4-terminal    
+    fi
     
     # Config xfce
     echo -e "${C_YELLOW}-----  Apparence :  -----${C_RST}"
