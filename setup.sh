@@ -54,6 +54,7 @@ function remove {
 
 function configOs {
     if [ "$os" = "ubuntu" ]; then
+        mkdir ~/.i3
         curl -fsSL https://github.com/C2-H6/setup/raw/main/i3/config-ubuntu.sh -o ~/.i3/config
         install i3
     elif [ "$os" = "manjaro" ]; then
@@ -202,7 +203,7 @@ function startConfig {
     if [ "$os" = "ubuntuV2" ]; then
         os="ubuntuV2"
     fi
-    #configTerminal
+    configTerminal
     configOs
 }
 
