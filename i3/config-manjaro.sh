@@ -1,4 +1,5 @@
 # i3 config file (v4)
+# Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
 # Set mod key (Mod1=<Alt>, Mod4=<Super>)
 set $mod Mod4
@@ -20,6 +21,10 @@ bindsym $mod+Return exec xfce4-terminal
 # kill focused window
 bindsym $mod+Shift+q kill
 
+######################   Audio  ######################
+
+exec --no-startup-id volumeicon
+
 ######################   My own shortcut  ######################
 
 # start program launcher
@@ -32,10 +37,10 @@ bindsym $mod+p exec discord
 
 ######################   Manjaro parameter  ######################
 
-bindsym $mod+Ctrl+b exec pcmanfm
+bindsym $mod+Ctrl+b exec pcmanfm #createubuntu case
 exec --no-startup-id pamac-tray
 
-############################################
+
 
 # change focus
 bindsym $mod+j focus left

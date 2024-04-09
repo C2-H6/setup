@@ -198,11 +198,17 @@ function configWebBrowser {
     read -p ""
 }
 
+function configSound {
+    install blueman
+    install pulseaudio-bluetooth
+}
+
 function startConfig {
     configWebBrowser
     configGit
     configOther
     configIde
+    configSound
     configObsidian
 
     if [ "$os" = "ubuntu" ]; then
