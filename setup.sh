@@ -118,6 +118,17 @@ function configObsidian {
     read -p ""
 }
 
+function configNotion {
+    if [ "$os" = "ubuntu" ]; then
+        sudo apt install notion-app-enhanced
+        sudo apt install notion-app
+    elif [ "$os" = "manjaro" ]; then
+        install yay
+        yay -S notion-app
+    fi
+
+}
+
 function configOther {
     install discord
 
@@ -210,6 +221,7 @@ function startConfig {
     configIde
     configSound
     configObsidian
+    configNotion
 
     if [ "$os" = "ubuntu" ]; then
         os="ubuntuV2"
