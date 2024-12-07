@@ -33,7 +33,8 @@ bindsym $mod+d exec --no-startup-id dmenu_run
 bindsym $mod+Shift+a exec blueman-manager
 
 bindsym $mod+o exec opera
-bindsym $mod+Shift+o exec obsidian
+bindsym $mod+n exec notion-app
+
 bindsym $mod+c exec code
 bindsym $mod+p exec discord
 
