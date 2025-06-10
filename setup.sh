@@ -237,6 +237,7 @@ function startConfig {
 get_os
 sys_upgrade
 
+clear
 startConfig
 
 echo -e "${C_YELLOW}The PC will reboot, Press Enter when done...${C_RST}"
