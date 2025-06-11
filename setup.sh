@@ -7,34 +7,18 @@ USERNAME="C2-H6"
 EMAIL="c2h6.dev@gmail.com"
 
 declare -A updates=(
-    ["ubuntu"]="snap refresh; sudo apt -y update"
     ["manjaro"]="pacman --noconfirm -Syu"
 )
 
 declare -A install=(
-    ["ubuntu"]="snap install"
-    ["ubuntuV2"]="apt install -y"
     ["manjaro"]="pacman -S --noconfirm"
 )
 
 declare -A remove=(
-    ["ubuntu"]="apt purge"
     ["manjaro"]="pacman -Rns" 
 )
 
 ##----------------------------------------------- OS related information ------------------------------------------------##
-
-
-function get_os {
-    if command -v apt-get &> /dev/null; then
-        os="ubuntu"
-    elif command -v pacman &> /dev/null; then
-        os="manjaro"
-    else
-        echo "Your OS is not supported."
-        return 1
-    fi
-}
 
 function sys_upgrade {
     sudo ${updates[$os]}
@@ -234,7 +218,7 @@ function startConfig {
 ##----------------------------------------------- rest ------------------------------------------------##
 
 
-get_os
+os="manjaro"
 sys_upgrade
 
 clear
