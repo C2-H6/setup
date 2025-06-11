@@ -37,18 +37,7 @@ function remove {
 
 
 function configOs {
-    if [ "$os" = "ubuntuV2" ]; then
-       /usr/lib/apt/apt-helper download-file https://debian.sur5r.net/i3/pool/main/s/sur5r-keyring/sur5r-keyring_2023.02.18_all.deb keyring.deb SHA256:a511ac5f10cd811f8a4ca44d665f2fa1add7a9f09bef238cdfad8461f5239cc4
-        sudo apt install ./keyring.deb
-        echo "deb http://debian.sur5r.net/i3/ $(grep '^DISTRIB_CODENAME=' /etc/lsb-release | cut -f2 -d=) universe" | sudo tee /etc/apt/sources.list.d/sur5r-i3.list
-        sudo apt update
-
-        mkdir ~/.i3
-        curl -fsSL https://github.com/C2-H6/setup/raw/main/i3/config-ubuntu.sh -o ~/.i3/config
-        install i3
-    elif [ "$os" = "manjaro" ]; then
         curl -fsSL https://github.com/C2-H6/setup/raw/main/i3/config-manjaro.sh -o ~/.i3/config
-    fi
 
     #Download wallpaper 
     curl -o ~/.i3/wallpaper.png -fsSL https://github.com/C2-H6/setup/raw/main/wallpaper/1.png
@@ -89,19 +78,6 @@ function configTerminal {
     echo "alias c='clear'" >> ~/.zshrc
 }
 
-function configObsidian {
-    if [ "$os" = "ubuntu" ]; then
-        sudo ${install["ubuntu"]} obsidian --classic
-    elif [ "$os" = "manjaro" ]; then
-        install obsidian
-        install noto-fonts-emoji
-    fi
-
-    git clone git@github.com:C2-H6/obsidianBackup.git
-    echo -e "${C_YELLOW}open : [OBSIDIAN]  and configure it, Press Enter when done...${C_RST}"
-    read -p ""
-}
-
 function configNotion {
     if [ "$os" = "ubuntu" ]; then
         sudo apt install notion-app-enhanced
@@ -132,11 +108,8 @@ function configIde {
 }
 
 function configGit {
-    if [ "$os" = "ubuntu" ]; then
-        sudo ${install["ubuntuV2"]} git
-    elif [ "$os" = "manjaro" ]; then
-        install git
-    fi
+    install git
+
 
     git config --global user.name "$USERNAME"
     git config --global user.email "$EMAIL"
@@ -153,22 +126,10 @@ function configGit {
 }
 
 
-function configWebBrowser {
-    # Install opera and make it the default web browser
-    if [ "$os" = "ubuntu" ]; then
-        wget -qO - https://deb.opera.com/archive.key | sudo apt-key add -
-        sudo add-apt-repository 'deb https://deb.opera.com/opera-stable/ stable non-free'
-        sudo apt-get update
-        sudo apt install -V opera-stable
-    elif [ "$os" = "manjaro" ]; then
-        install opera
-        remove palemoon        
-    fi
-       
-    #default web-browser
-    xdg-settings set default-web-browser opera.desktop
-    #open opera
-    echo -e "${C_YELLOW}Open : [OPERA], Press Enter when done...${C_RST}"
+function configWebBrowser {       
+
+    #open firefox
+    echo -e "${C_YELLOW}Open : [FIREFOX], Press Enter when done...${C_RST}"
     read -p ""
 
     #connect google
@@ -193,25 +154,22 @@ function configWebBrowser {
     read -p ""
 }
 
-function configSound {
-    install blueman
-    install pulseaudio-bluetooth
-}
-
 function startConfig {
-    configWebBrowser
-    configGit
-    configOther
-    configIde
-    configSound
-    configObsidian
-    configNotion
 
-    if [ "$os" = "ubuntu" ]; then
-        os="ubuntuV2"
-    fi
-    configTerminal
-    configOs
+    # web browser - HERE
+    configWebBrowser
+
+    #configGit
+
+    #configOther
+
+    #configIde
+
+    #configNotion
+
+    #configTerminal
+
+    #configOs
 }
 
 
