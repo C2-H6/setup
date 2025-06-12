@@ -56,8 +56,7 @@ function configTerminal {
         sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
     fi
 
-
-    # Add alias
+    # Add alias and if possible merge the 2 zsh configuration
     echo "alias c='clear'" >> ~/.zshrc
 }
 
