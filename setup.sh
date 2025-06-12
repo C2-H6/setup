@@ -123,7 +123,7 @@ function configWebBrowser {
 
     #connect firefox
     xdg-open "https://accounts.firefox.com"
-    echo -e "${C_YELLOW}Connection to [FIREFOX], Press Enter when done...${C_RST}"
+    echo -e "${C_YELLOW}Connection to [FIREFOX ACCOUNT], Press Enter when done...${C_RST}"
     read -p ""
     #connect google
     xdg-open "https://www.google.com/webhp"
@@ -149,7 +149,7 @@ function configWebBrowser {
 
 function startConfig {
 
-    configWebBrowser
+    #configWebBrowser
 
     configGit
 
