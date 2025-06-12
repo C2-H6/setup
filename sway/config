@@ -1,0 +1,29 @@
+
+# theme :
+set $theme $HOME/.config/sway/themes/matcha-green
+#set $theme /usr/share/sway/themes/matcha-green
+include $theme/theme.conf
+
+
+## user theme :
+include $HOME/.config/sway/definitions.d/theme.conf
+
+
+# definition :
+include $HOME/.config/sway/definitions.d/*.conf
+#include /etc/sway/definitions
+
+
+# shortcut :
+include $HOME/.config/sway/shortcut/*
+
+
+# user config : (A TERME SUPPR voir replace) 
+include $HOME/.config/sway/config.d/*.conf
+#include /etc/sway/config.d/*
+
+################################################
+
+# default inputs : USELESS
+include /etc/sway/inputs/*
+

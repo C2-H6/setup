@@ -39,6 +39,8 @@ function configOs {
     #police d'ecriture : xft:URWGothic-Book
 
 
+
+#RAJOUTER delivery folder & remove useless part of os
 }
 
 function configTerminal {
