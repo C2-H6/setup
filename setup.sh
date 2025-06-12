@@ -51,13 +51,13 @@ function configOs {
 function configTerminal {
 
     # Install Oh My Zsh
-    if [ ! -d "$HOME/.oh-my-zsh" ]; then
+    if [ ! -d "$HOME/.config/zsh/ohmyzsh" ]; then
         echo -e "${C_YELLOW}write : [exit] once new shell open, Press Enter when understand...${C_RST}"
         sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-    fi
 
-    # Add alias and if possible merge the 2 zsh configuration
-    echo "alias c='clear'" >> ~/.zshrc
+        # Add alias 
+        echo "alias c='clear'" >> ~/.config/zsh/ohmyzsh/oh-my-zsh.sh
+    fi
 }
 
 
