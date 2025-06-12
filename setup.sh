@@ -139,11 +139,11 @@ function configWebBrowser {
 
 function startConfig {
 
-    configWebBrowser
+    #configWebBrowser
 
-    configGit
+    #configGit
 
-    configOther
+    #configOther
 
     configTerminal
 
