@@ -6,30 +6,19 @@ C_RST='\033[0m'        # ANSI escape code to reset color
 USERNAME="C2-H6"
 EMAIL="c2h6.dev@gmail.com"
 
-declare -A updates=(
-    ["manjaro"]="pacman --noconfirm -Syu"
-)
-
-declare -A install=(
-    ["manjaro"]="pacman -S --noconfirm"
-)
-
-declare -A remove=(
-    ["manjaro"]="pacman -Rns" 
-)
 
 ##----------------------------------------------- OS related information ------------------------------------------------##
 
 function sys_upgrade {
-    sudo ${updates[$os]}
+    sudo pacman --noconfirm -Syu
 }
 
 function install {
-    sudo ${install[$os]} "$1"
+    sudo pacman -S --noconfirm
 }
 
 function remove {
-    sudo ${remove[$os]} "$1"
+    sudo pacman -Rns
 }
 
 
@@ -109,7 +98,7 @@ function configIde {
 
 function configGit {
     install git
-
+    install wl-clipboard
 
     git config --global user.name "$USERNAME"
     git config --global user.email "$EMAIL"
@@ -118,7 +107,7 @@ function configGit {
     eval "$(ssh-agent -s)"
     ssh-add ~/.ssh/id_rsa
     
-    cat ~/.ssh/id_rsa.pub
+    ccat ~/.ssh/id_rsa.pub | wl-copy
 
     xdg-open "https://github.com/settings/keys"
     echo -e "${C_YELLOW}copy and past the token in [github], Press Enter when done...${C_RST}"
@@ -132,14 +121,13 @@ function configWebBrowser {
     echo -e "${C_YELLOW}Open : [FIREFOX], Press Enter when done...${C_RST}"
     read -p ""
 
-
+    #connect firefox
+    xdg-open "https://accounts.firefox.com"
+    echo -e "${C_YELLOW}Connection to [FIREFOX ACCOUNT], Press Enter when done...${C_RST}"
+    read -p ""
     #connect google
     xdg-open "https://www.google.com/webhp"
     echo -e "${C_YELLOW}Connection to [GOOGLE], Press Enter when done...${C_RST}"
-    read -p ""
-    #connect opera
-    xdg-open "https://auth.opera.com/account/authenticate/email"
-    echo -e "${C_YELLOW}Connection to [OPERA], Press Enter when done...${C_RST}"
     read -p ""
     #connect google github
     xdg-open "https://github.com/login"
@@ -153,11 +141,14 @@ function configWebBrowser {
     xdg-open "https://chat.openai.com"
     echo -e "${C_YELLOW}Connection to [OPEN-IA], Press Enter when done...${C_RST}"
     read -p ""
+    #connect google deepSeek
+    xdg-open "https://chat.deepseek.com"
+    echo -e "${C_YELLOW}Connection to [DEEP-SEEK], Press Enter when done...${C_RST}"
+    read -p ""
 }
 
 function startConfig {
 
-    # web browser - HERE
     configWebBrowser
 
     configGit
