@@ -80,6 +80,16 @@ function configNotion {
 
 }
 
+function configIde {
+    if [ "$os" = "ubuntu" ]; then
+        sudo ${install["ubuntu"]} code --classic
+    elif [ "$os" = "manjaro" ]; then
+        install code
+    fi
+    echo -e "${C_YELLOW}Setting Sync download and updtate, Press Enter when done...${C_RST}"
+    read -p ""
+}
+
 function configOther {
 
     install discord
@@ -87,18 +97,13 @@ function configOther {
     echo -e "${C_YELLOW}open : [DISCORD] and configure it, Press Enter when done...${C_RST}"
     read -p ""
 
-    install spotify
-    #connect discord
-    echo -e "${C_YELLOW}open : [DISCORD] and configure it, Press Enter when done...${C_RST}"
+    install spotify-launcher
+    #connect spotify
+    echo -e "${C_YELLOW}open : [SPOTIFY] and configure it, Press Enter when done...${C_RST}"
     read -p ""
-}
 
-function configIde {
-    if [ "$os" = "ubuntu" ]; then
-        sudo ${install["ubuntu"]} code --classic
-    elif [ "$os" = "manjaro" ]; then
-        install code
-    fi
+    install code
+    #connect sync to VScode
     echo -e "${C_YELLOW}Setting Sync download and updtate, Press Enter when done...${C_RST}"
     read -p ""
 }
@@ -161,8 +166,6 @@ function startConfig {
     #configGit
 
     configOther
-
-    #configIde
 
     #configNotion
 
