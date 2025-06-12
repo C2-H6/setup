@@ -9,6 +9,7 @@ EMAIL="c2h6.dev@gmail.com"
 
 ##----------------------------------------------- OS related information ------------------------------------------------##
 
+
 function sys_upgrade {
     sudo pacman --noconfirm -Syu
 }
@@ -163,9 +164,9 @@ function startConfig {
 
     #configWebBrowser
 
-    #configGit
+    configGit
 
-    configOther
+    #configOther
 
     #configNotion
 
