@@ -132,6 +132,7 @@ function configWebBrowser {
     echo -e "${C_YELLOW}Open : [FIREFOX], Press Enter when done...${C_RST}"
     read -p ""
 
+
     #connect google
     xdg-open "https://www.google.com/webhp"
     echo -e "${C_YELLOW}Connection to [GOOGLE], Press Enter when done...${C_RST}"
@@ -159,7 +160,7 @@ function startConfig {
     # web browser - HERE
     configWebBrowser
 
-    #configGit
+    configGit
 
     #configOther
 
