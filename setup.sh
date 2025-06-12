@@ -107,7 +107,7 @@ function configGit {
     eval "$(ssh-agent -s)"
     ssh-add ~/.ssh/id_rsa
     
-    ccat ~/.ssh/id_rsa.pub | wl-copy
+    cat ~/.ssh/id_rsa.pub | wl-copy
 
     xdg-open "https://github.com/settings/keys"
     echo -e "${C_YELLOW}copy and past the token in [github], Press Enter when done...${C_RST}"
@@ -123,7 +123,7 @@ function configWebBrowser {
 
     #connect firefox
     xdg-open "https://accounts.firefox.com"
-    echo -e "${C_YELLOW}Connection to [FIREFOX ACCOUNT], Press Enter when done...${C_RST}"
+    echo -e "${C_YELLOW}Connection to [FIREFOX], Press Enter when done...${C_RST}"
     read -p ""
     #connect google
     xdg-open "https://www.google.com/webhp"
