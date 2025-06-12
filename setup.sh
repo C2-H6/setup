@@ -17,7 +17,7 @@ function install {
     sudo pacman -S --noconfirm "$@"
 }
 
-function remove {
+function uninstall {
     sudo pacman -Rns "$@"
 }
 
@@ -26,7 +26,7 @@ function remove {
 
 
 function configOs {
-        curl -fsSL https://github.com/C2-H6/setup/raw/main/i3/config-manjaro.sh -o ~/.i3/config
+    curl -fsSL https://github.com/C2-H6/setup/raw/main/i3/config-manjaro.sh -o ~/.i3/config
 
     #Download wallpaper 
     curl -o ~/.i3/wallpaper.png -fsSL https://github.com/C2-H6/setup/raw/main/wallpaper/1.png
@@ -39,25 +39,17 @@ function configOs {
     #police d'ecriture : xft:URWGothic-Book
 
 
+    #Download alt packages
+    install picom
+    install xfce4-power-manager
+    install feh
+    #police d'ecriture : xft:URWGothic-Book
 
 #RAJOUTER delivery folder & remove useless part of os
 }
 
 function configTerminal {
-    # Install terminal
-    install xfce4-terminal 
-    
-    # Config xfce
-    echo -e "${C_YELLOW}-----  Apparence :  -----${C_RST}"
-    echo -e "${C_YELLOW}[--] : Transparent background${C_RST}"
-    echo -e "${C_YELLOW}[o] : display menu bar${C_RST}"
-    echo -e "${C_YELLOW}[o] : display border${C_RST}"
-    echo -e "${C_YELLOW}Config xfce4, Press Enter when done...${C_RST}"
-    read -p ""
 
-
-    # Install zsh
-    install zsh
     # Install Oh My Zsh
     if [ ! -d "$HOME/.oh-my-zsh" ]; then
         echo -e "${C_YELLOW}write : [exit] once new shell open, Press Enter when understand...${C_RST}"
@@ -69,26 +61,6 @@ function configTerminal {
     echo "alias c='clear'" >> ~/.zshrc
 }
 
-function configNotion {
-    if [ "$os" = "ubuntu" ]; then
-        sudo apt install notion-app-enhanced
-        sudo apt install notion-app
-    elif [ "$os" = "manjaro" ]; then
-        install yay
-        yay -S notion-app
-    fi
-
-}
-
-function configIde {
-    if [ "$os" = "ubuntu" ]; then
-        sudo ${install["ubuntu"]} code --classic
-    elif [ "$os" = "manjaro" ]; then
-        install code
-    fi
-    echo -e "${C_YELLOW}Setting Sync download and updtate, Press Enter when done...${C_RST}"
-    read -p ""
-}
 
 function configOther {
 
@@ -103,8 +75,13 @@ function configOther {
     read -p ""
 
     install code
-    #connect sync to VScode
-    echo -e "${C_YELLOW}Setting Sync download and updtate, Press Enter when done...${C_RST}"
+    #connect CODE-OSS
+    echo -e "${C_YELLOW}open : [CODE_OSS] and configure it, Press Enter when done...${C_RST}"
+    read -p ""
+
+    yay -S notion-app-electron
+    #connect notion
+    echo -e "${C_YELLOW}open : [NOTION] and configure it, Press Enter when done...${C_RST}"
     read -p ""
 }
 
@@ -124,6 +101,7 @@ function configGit {
     xdg-open "https://github.com/settings/keys"
     echo -e "${C_YELLOW}copy and past the token in [github], Press Enter when done...${C_RST}"
     read -p ""
+
 }
 
 
@@ -161,15 +139,13 @@ function configWebBrowser {
 
 function startConfig {
 
-    #configWebBrowser
+    configWebBrowser
 
-    #configGit
+    configGit
 
     configOther
 
-    #configNotion
-
-    #configTerminal
+    configTerminal
 
     #configOs
 }
