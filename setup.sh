@@ -79,8 +79,13 @@ function configNotion {
 }
 
 function configOther {
-    install discord
 
+    install discord
+    #connect discord
+    echo -e "${C_YELLOW}open : [DISCORD] and configure it, Press Enter when done...${C_RST}"
+    read -p ""
+
+    install spotify
     #connect discord
     echo -e "${C_YELLOW}open : [DISCORD] and configure it, Press Enter when done...${C_RST}"
     read -p ""
@@ -151,9 +156,9 @@ function startConfig {
 
     #configWebBrowser
 
-    configGit
+    #configGit
 
-    #configOther
+    configOther
 
     #configIde
 

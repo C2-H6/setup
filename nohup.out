@@ -1,0 +1,115 @@
+Discord 0.0.97
+[27917:0612/130732.823452:ERROR:object_proxy.cc(576)] Failed to call method: org.freedesktop.DBus.Properties.Get: object_path= /org/freedesktop/portal/desktop: org.freedesktop.DBus.Error.InvalidArgs: No such interface “org.freedesktop.portal.FileChooser”
+[27917:0612/130732.823558:ERROR:file_dialog_linux_portal.cc(78)] Failed to read portal version property
+(electron) 'session.getPreloads' is deprecated and will be removed. Please use 'session.getPreloadScripts' instead.
+(electron) 'session.setPreloads' is deprecated and will be removed. Please use 'session.registerPreloadScript' instead.
+Starting app.
+Starting updater.
+6/12/2025, 1:07:32 PM GMT+2 [Modules] Modules initializing
+6/12/2025, 1:07:32 PM GMT+2 [Modules] Distribution: remote
+6/12/2025, 1:07:32 PM GMT+2 [Modules] Host updates: enabled
+6/12/2025, 1:07:32 PM GMT+2 [Modules] Module updates: enabled
+6/12/2025, 1:07:32 PM GMT+2 [Modules] Module install path: /home/c2h6/.config/discord/0.0.97/modules
+6/12/2025, 1:07:32 PM GMT+2 [Modules] Module installed file path: /home/c2h6/.config/discord/0.0.97/modules/installed.json
+6/12/2025, 1:07:32 PM GMT+2 [Modules] Module download path: /home/c2h6/.config/discord/0.0.97/modules/pending
+splashScreen.initSplash(false)
+CDM component API found
+blackbox: 6/12/2025, 1:07:32 PM GMT+2 0 
+
+----------------------------------------------
+CDM completed with status: cdm-ready-success
+blackbox: 6/12/2025, 1:07:32 PM GMT+2 1 Discord starting: {"releaseChannel":"stable","version":"0.0.97"}, modulepath: /home/c2h6/.config/discord/0.0.97/modules
+blackbox: 6/12/2025, 1:07:32 PM GMT+2 2 ✅ webContents.created web1 ""
+blackbox: 6/12/2025, 1:07:32 PM GMT+2 3 ✅ window.created win1 "discord"
+(electron) 'console-message' arguments are deprecated and will be removed. Please use Event<WebContentsConsoleMessageEventParams> object instead.
+13:07:32.970 › DiscordSplash.signalReady
+splashScreen: SPLASH_SCREEN_READY
+6/12/2025, 1:07:32 PM GMT+2 [Modules] No updates to install
+splashScreen: no-pending-updates
+6/12/2025, 1:07:32 PM GMT+2 [Modules] Checking for host updates.
+splashScreen: checking-for-updates
+splashScreen.updateSplashState checking-for-updates checking-for-updates {}
+splashScreen.webContentsSend: SPLASH_UPDATE_STATE SPLASH_UPDATE_STATE [ { status: 'checking-for-updates' } ]
+13:07:32.980 › DiscordSplash.onStateUpdate: {"status":"checking-for-updates"}
+13:07:32.981 › Splash.onStateUpdate: {"status":"checking-for-updates"}
+blackbox: 6/12/2025, 1:07:32 PM GMT+2 4 ✅ webContents.did-finish-load web1
+6/12/2025, 1:07:33 PM GMT+2 [Modules] Host is up to date.
+6/12/2025, 1:07:33 PM GMT+2 [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+6/12/2025, 1:07:33 PM GMT+2 [Modules] No module updates available.
+splashScreen: update-check-finished true 0 false
+splashScreen.launchMainWindow: false
+Optional module ./ElectronTestRpc was not included.
+splashScreen.updateSplashState launching launching {}
+splashScreen.webContentsSend: SPLASH_UPDATE_STATE SPLASH_UPDATE_STATE [ { status: 'launching' } ]
+blackbox: 6/12/2025, 1:07:33 PM GMT+2 5 ✅ webContents.created web2 ""
+13:07:33.377 › DiscordSplash.onStateUpdate: {"status":"launching"}
+13:07:33.377 › Splash.onStateUpdate: {"status":"launching"}
+blackbox: 6/12/2025, 1:07:33 PM GMT+2 6 ✅ window.created win2 "Discord"
+13:07:33.970 › Splash.updateCountdownSeconds: undefined
+13:07:34.970 › Splash.updateCountdownSeconds: undefined
+13:07:35.970 › Splash.updateCountdownSeconds: undefined
+blackbox: 6/12/2025, 1:07:36 PM GMT+2 7 ✅ webContents.did-finish-load web2
+13:07:36.311 › [libdiscore] [experiment_manager] Loaded experiments from cache
+13:07:36.476 › Initializing voice engine with audio subsystem: standard
+13:07:36.541 › [DatabaseManager] active user changed (now: undefined, was: null, was: undefined)
+legacyModuleUpdater: installed-module discord_krisp 1 1 true
+13:07:36.546 › [default] [BUILD INFO] Release Channel: stable, Build Number: 407742, Version Hash: f60084578dc598c4d79839426437028ad1f2e10c
+legacyModuleUpdater: installed-module discord_game_utils 1 1 true
+13:07:36.681 › [NoteStore] libdiscore enabled: false
+13:07:36.690 › [default] [NATIVE INFO] host 0.0.97, modules: discord_desktop_core: 1, discord_erlpack: 1, discord_spellcheck: 1, discord_utils: 1, discord_voice: 1, discord_zstd: 1, discord_krisp: 1, discord_game_utils: 1, discord_rpc: 1, build: null
+mainScreen.UpdaterEvents: UPDATER_HISTORY_QUERY_AND_TRUNCATE
+ipcMain.on(IPCEvents.APP_ASYNC_INDEX_TSX_LOADED) false false
+splashScreen.pageReady
+13:07:36.694 › [libdiscore] The answer for life the universe and everything is: 42
+blackbox: 6/12/2025, 1:07:36 PM GMT+2 8 window.close win1
+blackbox: 6/12/2025, 1:07:36 PM GMT+2 9 webContents.destroyed web1
+blackbox: 6/12/2025, 1:07:36 PM GMT+2 10 window.closed win1
+WEIGHT /home/c2h6/.config/discord/0.0.97/modules/discord_krisp/c5.n.s.20949d.kw
+WEIGHT /home/c2h6/.config/discord/0.0.97/modules/discord_krisp/c5.s.w.c9ac8f.kw
+WEIGHT /home/c2h6/.config/discord/0.0.97/modules/discord_krisp/c6.f.s.ced125.kw
+WEIGHT /home/c2h6/.config/discord/0.0.97/modules/discord_krisp/VAD_model.kw
+13:07:37.180 › [Spellchecker] sh is not a valid locale.
+mainScreen.UpdaterEvents: UPDATER_HISTORY_QUERY_AND_TRUNCATE
+13:07:37.199 › [Spellchecker] Switching to en-US (available)
+mainScreen.UpdaterEvents: UPDATER_HISTORY_QUERY_AND_TRUNCATE
+13:07:37.314 › [KeyboardLayoutMapUtils] KeyboardMapper - Key code mismatch for key x: 53 !== 88
+13:07:37.376 › [KeyboardLayoutMapUtils] KeyboardMapper - Key code mismatch for key c: 54 !== 67
+13:07:37.491 › Window state not initialized window-1
+13:07:37.492 › Window state not initialized window-1
+13:07:37.492 › Window state not initialized window-1
+13:07:37.492 › Window state not initialized window-1
+blackbox: 6/12/2025, 1:07:37 PM GMT+2 11 ✅ webContents.did-finish-load web2
+13:07:37.816 › [libdiscore] [experiment_manager] Loaded experiments from cache
+13:07:37.862 › Initializing voice engine with audio subsystem: standard
+13:07:37.887 › [DatabaseManager] active user changed (now: undefined, was: null, was: undefined)
+legacyModuleUpdater: installed-module discord_krisp 1 1 true
+13:07:37.889 › [default] [BUILD INFO] Release Channel: stable, Build Number: 407742, Version Hash: f60084578dc598c4d79839426437028ad1f2e10c
+legacyModuleUpdater: installed-module discord_game_utils 1 1 true
+13:07:37.934 › [NoteStore] libdiscore enabled: false
+13:07:37.937 › [default] [NATIVE INFO] host 0.0.97, modules: discord_desktop_core: 1, discord_erlpack: 1, discord_spellcheck: 1, discord_utils: 1, discord_voice: 1, discord_zstd: 1, discord_krisp: 1, discord_game_utils: 1, discord_rpc: 1, build: null
+mainScreen.UpdaterEvents: UPDATER_HISTORY_QUERY_AND_TRUNCATE
+ipcMain.on(IPCEvents.APP_ASYNC_INDEX_TSX_LOADED) false true
+splashScreen.pageReady
+splashScreen.destroySplash: splashWindow is null or destroyed.
+13:07:37.938 › [libdiscore] The answer for life the universe and everything is: 42
+mainScreen.UpdaterEvents: UPDATER_HISTORY_QUERY_AND_TRUNCATE
+13:07:37.998 › [Spellchecker] sh is not a valid locale.
+mainScreen.UpdaterEvents: UPDATER_HISTORY_QUERY_AND_TRUNCATE
+13:07:38.044 › [Spellchecker] Switching to en-US (available)
+13:07:38.179 › [CloudSyncUtils] CloudSync is not supported on this platform
+legacyModuleUpdater: installed-module discord_rpc 1 1 true
+(electron) 'webContents.clearHistory' is deprecated and will be removed. Please use 'webContents.navigationHistory.clear' instead.
+mainScreen.UpdaterEvents: UPDATER_HISTORY_QUERY_AND_TRUNCATE
+13:07:38.392 › [RPCServer:WSS] Starting on 6463
+13:07:38.394 › [RPCServer:IPC] Starting on /run/user/1000/discord-ipc-0
+blackbox: 6/12/2025, 1:07:38 PM GMT+2 12 before-quit
+blackbox: 6/12/2025, 1:07:38 PM GMT+2 13 window.close win2
+13:07:38.558 › Window state not initialized window-1
+13:07:38.558 › Window state not initialized window-1
+13:07:38.558 › Window state not initialized window-1
+13:07:38.558 › Window state not initialized window-1
+blackbox: 6/12/2025, 1:07:38 PM GMT+2 14 webContents.destroyed web2
+[27917:0612/130738.568490:ERROR:wayland_event_watcher.cc(47)] libwayland: warning: queue 0x60400b72440 destroyed while proxies still attached:
+
+[27917:0612/130738.568588:ERROR:wayland_event_watcher.cc(47)] libwayland:   wl_shm_pool#40 still attached
+
