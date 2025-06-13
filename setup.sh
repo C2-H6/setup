@@ -9,6 +9,7 @@ EMAIL="c2h6.dev@gmail.com"
 
 ##----------------------------------------------- OS related information ------------------------------------------------##
 
+
 function sys_upgrade {
     sudo pacman --noconfirm -Syu "$@"
 }
@@ -26,40 +27,22 @@ function uninstall {
 
 
 function configOs {
-    curl -fsSL https://github.com/C2-H6/setup/raw/main/i3/config-manjaro.sh -o ~/.i3/config
+    
 
-    #Download wallpaper 
-    curl -o ~/.i3/wallpaper.png -fsSL https://github.com/C2-H6/setup/raw/main/wallpaper/1.png
-    curl -o ~/.i3/hello.png -fsSL https://github.com/C2-H6/setup/raw/main/wallpaper/4.png
-
-    #Download alt packages
-    install picom
-    install xfce4-power-manager
-    install feh
-    #police d'ecriture : xft:URWGothic-Book
-
-
-    #Download alt packages
-    install picom
-    install xfce4-power-manager
-    install feh
-    #police d'ecriture : xft:URWGothic-Book
-
-#RAJOUTER delivery folder & remove useless part of os
+    git clone --depth=1 https://github.com/C2-H6/setup.git /tmp/setup && rm -rf ~/.config/sway && cp -r /tmp/setup/sway ~/.config/sway
 }
 
 function configTerminal {
-
     # Install Oh My Zsh
     if [ ! -d "$HOME/.config/zsh/ohmyzsh" ]; then
-        echo -e "${C_YELLOW}write : [exit] once new shell open, Press Enter when understand...${C_RST}"
+        echo -e "${C_YELLOW}[WARNING] write : [exit] once new shell open, Press Enter when understand...${C_RST}"
         sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-
-        # Add alias 
-        echo "alias c='clear'" >> ~/.config/zsh/ohmyzsh/oh-my-zsh.sh
     fi
-}
 
+    # Add alias
+    echo "alias c='clear'" >> "$HOME/.config/zsh/ohmyzsh/oh-my-zsh.sh"
+
+}
 
 function configOther {
 
@@ -103,7 +86,6 @@ function configGit {
 
 }
 
-
 function configWebBrowser {       
 
     #open firefox
@@ -139,21 +121,17 @@ function configWebBrowser {
 function startConfig {
 
     #configWebBrowser
-
     #configGit
-
     #configOther
 
     configTerminal
-
-    #configOs
+    configOs
 }
 
 
 ##----------------------------------------------- rest ------------------------------------------------##
 
 
-os="manjaro"
 sys_upgrade
 
 clear
