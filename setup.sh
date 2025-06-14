@@ -63,6 +63,7 @@ function configOther {
 
     yay -S notion-app-electron
     #connect notion
+    #copie file to good place
     echo -e "${C_YELLOW}open : [NOTION] and configure it, Press Enter when done...${C_RST}"
     read -p ""
 }
