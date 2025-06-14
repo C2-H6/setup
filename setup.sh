@@ -27,9 +27,9 @@ function uninstall {
 
 
 function configOs {
-    
-
     git clone --depth=1 https://github.com/C2-H6/setup.git /tmp/setup && rm -rf ~/.config/sway && cp -r /tmp/setup/sway ~/.config/sway
+    mkdir "$HOME/delivery"
+    rm -rf ~/Desktop ~/Music ~/Templates ~/Public ~/Videos
 }
 
 function configTerminal {

@@ -1,0 +1,13 @@
+bindsym $mod+o exec firefox
+
+
+#bindsym $mod+o exec pamac-manager
+#bindsym $mod+o exec spotify-launcher
+#bindsym $mod+o exec notion-app
+bindsym $mod+[ exec code
+#bindsym $mod+o exec pcmanfm-qt
+
+#bindsym $mod+o exec discord
+
+
+
