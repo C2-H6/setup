@@ -1,12 +1,10 @@
+exec --no-startup-id topgrade --yes
+exec --no-startup-id notion-app
+
+
 bindsym $mod+o exec firefox
 bindsym $mod+c exec code
-
-
-#bindsym $mod+i exec pamac-manager
-#bindsym $mod+o exec spotify-launcher
-#bindsym $mod+o exec notion-app
-#bindsym $mod+o exec pcmanfm-qt
-#bindsym $mod+o exec discord
-
-
-
+bindsym $mod+y exec spotify-launcher
+bindsym $mod+z exec notion-app
+bindsym $mod+q exec pcmanfm-qt
+bindsym $mod+x exec discord

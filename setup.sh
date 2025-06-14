@@ -27,6 +27,7 @@ function uninstall {
 
 
 function configOs {
+    Install topgrade
     git clone --depth=1 https://github.com/C2-H6/setup.git /tmp/setup && rm -rf ~/.config/sway && cp -r /tmp/setup/sway ~/.config/sway
     mkdir "$HOME/delivery"
     rm -rf ~/Desktop ~/Music ~/Templates ~/Public ~/Videos
