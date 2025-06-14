@@ -64,7 +64,7 @@ function configOther {
 
     yay -S notion-app-electron
     #connect notion
-    curl -fsSL https://raw.githubusercontent.com/C2-H6/setup/main/sway/config.toml -o ~/.config/sworkstyle/config.toml
+    curl -fsSL https://raw.githubusercontent.com/C2-H6/setup/main/config.toml -o ~/.config/sworkstyle/config.toml
     echo -e "${C_YELLOW}open : [NOTION] and configure it, Press Enter when done...${C_RST}"
     read -p ""
 }
