@@ -34,6 +34,7 @@ function configOs {
 }
 
 function configTerminal {
+    install tree
     # Install Oh My Zsh
     if [ ! -d "$HOME/.config/zsh/ohmyzsh" ]; then
         echo -e "${C_YELLOW}[WARNING] write : [exit] once new shell open, Press Enter when understand...${C_RST}"
@@ -42,7 +43,8 @@ function configTerminal {
 
     # Add alias
     echo "alias c='clear'" >> "$HOME/.config/zsh/ohmyzsh/oh-my-zsh.sh"
-
+    echo "plugins=(git zsh-autosuggestions)" >> "$HOME/.config/zsh/ohmyzsh/oh-my-zsh.sh"
+    echo "source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh" >> "$HOME/.config/zsh/ohmyzsh/oh-my-zsh.sh"
 }
 
 function configOther {
