@@ -94,20 +94,20 @@ function configWebBrowser {
     echo -e "${C_YELLOW}Open : [FIREFOX], Press Enter when done...${C_RST}"
     read -p ""
 
-    #connect firefox
-    xdg-open "https://accounts.firefox.com"
-    echo -e "${C_YELLOW}Connection to [FIREFOX ACCOUNT], Press Enter when done...${C_RST}"
-    read -p ""
     #connect google
     xdg-open "https://www.google.com/webhp"
     echo -e "${C_YELLOW}Connection to [GOOGLE], Press Enter when done...${C_RST}"
+    read -p ""
+    #connect firefox
+    xdg-open "https://accounts.firefox.com"
+    echo -e "${C_YELLOW}Connection to [FIREFOX ACCOUNT], Press Enter when done...${C_RST}"
     read -p ""
     #connect google github
     xdg-open "https://github.com/login"
     echo -e "${C_YELLOW}Connection to [GITHUB], Press Enter when done...${C_RST}"
     read -p ""
     #connect google leetcode
-    xdg-open "https://leetcode.com/accounts/signup/"
+    xdg-open "https://leetcode.com/accounts/login/"
     echo -e "${C_YELLOW}Connection to [LEETCODE], Press Enter when done...${C_RST}"
     read -p ""
     #connect google openIA
@@ -122,9 +122,9 @@ function configWebBrowser {
 
 function startConfig {
 
-    #configWebBrowser
-    #configGit
-    #configOther
+    configWebBrowser
+    configGit
+    configOther
 
     configTerminal
     configOs
