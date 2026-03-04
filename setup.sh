@@ -70,7 +70,6 @@ function configOther {
     echo -e "${C_YELLOW}open : [NOTION] and configure it, Press Enter when done...${C_RST}"
     read -p ""
 
-    #install Ledger
     yay -S ledger-live-desktop
     #fix for Manjaro
     wget -q -O - https://raw.githubusercontent.com/LedgerHQ/udev-rules/master/add_udev_rules.sh | sudo bash
@@ -98,7 +97,6 @@ function configGit {
 }
 
 function configWebBrowser {       
-
     #open firefox
     echo -e "${C_YELLOW}Open : [FIREFOX], Press Enter when done...${C_RST}"
     read -p ""
@@ -107,6 +105,9 @@ function configWebBrowser {
     xdg-open "https://www.google.com/webhp"
     echo -e "${C_YELLOW}Connection to [GOOGLE], Press Enter when done...${C_RST}"
     read -p ""
+    #connect bitWarden
+    xdg-open "https://vault.bitwarden.com/#/login"
+    echo -e "${C_YELLOW}Connection to [BITWARDEN], Press Enter when done...${C_RST}"
     #connect firefox
     xdg-open "https://accounts.firefox.com"
     echo -e "${C_YELLOW}Connection to [FIREFOX ACCOUNT], Press Enter when done...${C_RST}"
@@ -115,17 +116,13 @@ function configWebBrowser {
     xdg-open "https://github.com/login"
     echo -e "${C_YELLOW}Connection to [GITHUB], Press Enter when done...${C_RST}"
     read -p ""
-    #connect google leetcode
-    xdg-open "https://leetcode.com/accounts/login/"
-    echo -e "${C_YELLOW}Connection to [LEETCODE], Press Enter when done...${C_RST}"
-    read -p ""
     #connect google openIA
     xdg-open "https://chat.openai.com"
     echo -e "${C_YELLOW}Connection to [OPEN-IA], Press Enter when done...${C_RST}"
     read -p ""
-    #connect google deepSeek
-    xdg-open "https://chat.deepseek.com"
-    echo -e "${C_YELLOW}Connection to [DEEP-SEEK], Press Enter when done...${C_RST}"
+    #connect google Finary
+    xdg-open "https://app.finary.com/v2/login"
+    echo -e "${C_YELLOW}Connection to [FINARY], Press Enter when done...${C_RST}"
     read -p ""
 }
 

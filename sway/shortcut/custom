@@ -2,7 +2,7 @@ exec --no-startup-id brightnessctl set 30%
 exec --no-startup-id topgrade --yes
 exec --no-startup-id notion-app
 
-bindsym $mod+l exec sh -c 'Ledger Wallet'
+bindsym $mod+i exec ledger-live-desktop
 bindsym $mod+o exec firefox
 bindsym $mod+c exec code
 bindsym $mod+y exec spotify-launcher
