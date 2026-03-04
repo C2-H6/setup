@@ -113,7 +113,7 @@ function configWebBrowser {
     #connect firefox
     xdg-open "https://accounts.firefox.com"
     echo -e "${C_YELLOW}Connection to [FIREFOX ACCOUNT], Press Enter when done...${C_RST}"
-    echo -e "${C_YELLOW}[Home] | [Travail] | [Dev01] | [Dev02] | [Manga]]${C_RST}"
+    echo -e "${C_YELLOW}Simple Tab : [Home] | [Travail] | [Dev01] | [Dev02] | [Manga]${C_RST}"
     #echo -e "${C_YELLOW}You need to change some of the firefox things like the Bookmarks bars...${C_RST}"
     read -p ""
     #connect google github
