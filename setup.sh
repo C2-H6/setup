@@ -27,7 +27,7 @@ function uninstall {
 
 
 function configOs {
-    Install topgrade
+    install topgrade
     git clone --depth=1 https://github.com/C2-H6/setup.git /tmp/setup && rm -rf ~/.config/sway && cp -r /tmp/setup/sway ~/.config/sway
     mkdir "$HOME/delivery"
     rm -rf ~/Desktop ~/Music ~/Templates ~/Public ~/Videos
@@ -68,6 +68,13 @@ function configOther {
     #connect notion
     curl -fsSL https://raw.githubusercontent.com/C2-H6/setup/main/config.toml -o ~/.config/sworkstyle/config.toml
     echo -e "${C_YELLOW}open : [NOTION] and configure it, Press Enter when done...${C_RST}"
+    read -p ""
+
+    #install Ledger
+    yay -S ledger-live-desktop
+    #fix for Manjaro
+    wget -q -O - https://raw.githubusercontent.com/LedgerHQ/udev-rules/master/add_udev_rules.sh | sudo bash
+    echo -e "${C_YELLOW}open : [LEDGER] and configure it, Press Enter when done...${C_RST}"
     read -p ""
 }
 
