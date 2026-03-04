@@ -1,6 +1,7 @@
 #!/bin/bash
 
 C_YELLOW='\033[1;33m'  # ANSI escape code for yellow
+C_RED='\033[1;31m'     # ANSI escape code for red
 C_RST='\033[0m'        # ANSI escape code to reset color
 
 USERNAME="C2-H6"
@@ -35,9 +36,10 @@ function configOs {
 
 function configTerminal {
     install tree
+
     # Install Oh My Zsh
     if [ ! -d "$HOME/.config/zsh/ohmyzsh" ]; then
-        echo -e "${C_YELLOW}[WARNING] write : [exit] once new shell open, Press Enter when understand...${C_RST}"
+        echo -e "${C_YELLOW}[WARNING] write : [${C_RED}exit${C_YELLOW}] once new shell open, Press Enter when understand...${C_RST}"
         sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
     fi
 
@@ -64,13 +66,13 @@ function configOther {
     echo -e "${C_YELLOW}open : [CODE_OSS] and configure it, Press Enter when done...${C_RST}"
     read -p ""
 
-    yay -S notion-app-electron
+    yay -S --noconfirm notion-app-electron
     #connect notion
     curl -fsSL https://raw.githubusercontent.com/C2-H6/setup/main/config.toml -o ~/.config/sworkstyle/config.toml
     echo -e "${C_YELLOW}open : [NOTION] and configure it, Press Enter when done...${C_RST}"
     read -p ""
 
-    yay -S ledger-live-desktop
+    yay -S --noconfirm ledger-live-desktop
     #fix for Manjaro
     wget -q -O - https://raw.githubusercontent.com/LedgerHQ/udev-rules/master/add_udev_rules.sh | sudo bash
     echo -e "${C_YELLOW}open : [LEDGER] and configure it, Press Enter when done...${C_RST}"
@@ -111,6 +113,8 @@ function configWebBrowser {
     #connect firefox
     xdg-open "https://accounts.firefox.com"
     echo -e "${C_YELLOW}Connection to [FIREFOX ACCOUNT], Press Enter when done...${C_RST}"
+    echo -e "${C_YELLOW}[Home] | [Travail] | [Dev01] | [Dev02] | [Manga]]${C_RST}"
+    #echo -e "${C_YELLOW}You need to change some of the firefox things like the Bookmarks bars...${C_RST}"
     read -p ""
     #connect google github
     xdg-open "https://github.com/login"
