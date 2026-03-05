@@ -124,6 +124,10 @@ function configWebBrowser {
     xdg-open "https://chat.openai.com"
     echo -e "${C_YELLOW}Connection to [OPEN-IA], Press Enter when done...${C_RST}"
     read -p ""
+    #connect google Claude
+    xdg-open "https://claude.ai/new"
+    echo -e "${C_YELLOW}Connection to [CLAUDE], Press Enter when done...${C_RST}"
+    read -p ""
     #connect google Finary
     xdg-open "https://app.finary.com/v2/login"
     echo -e "${C_YELLOW}Connection to [FINARY], Press Enter when done...${C_RST}"
