@@ -1,5 +1,5 @@
 exec --no-startup-id brightnessctl set 30%
-exec --no-startup-id topgrade --yes
+exec --no-startup-id footclient topgrade --yes
 exec --no-startup-id notion-app
 
 bindsym $mod+i exec ledger-live-desktop
